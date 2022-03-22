@@ -1,0 +1,124 @@
+.pricing-one {
+    padding-top: 120px;
+
+    &__single {
+        margin-bottom: 30px;
+        text-align: center;
+        border: 2px solid #eff0f9;
+        padding-bottom: 60px;
+        transition: all .4s ease;
+
+        &:hover {
+            box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+        }
+    }
+
+    &__top {
+        padding-top: 54.5px;
+        padding-bottom: 54.5px;
+        border-bottom: 2px solid #eff0f9;
+        position: relative;
+
+        &:before {
+            content: '';
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: $thm-base-color;
+            opacity: 0.1;
+            position: absolute;
+            top: calc(50% - 33.5px);
+            left: calc(50% - 33.5px);
+            transform-origin: center bottom;
+            animation-fill-mode: both;
+            animation-name: bounce;
+            animation-timing-function: ease-out;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    &__amount {
+        margin: 0;
+        line-height: 1em;
+        font-size: 46px;
+        font-weight: 500;
+        color: $thm-base-color-2;
+    }
+
+    &__name {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        color: $thm-black;
+        line-height: 1em;
+        margin-top: 25px;
+    }
+
+    &__list {
+        margin: 0;
+        margin-bottom: 40px;
+        margin-top: 60px;
+
+        li {
+            color: #7b7b8c;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1em;
+
+            +li {
+                margin-top: 23px;
+            }
+        }
+
+    }
+
+    &__btn {
+        background-color: $thm-base-color;
+        color: $thm-black;
+
+        &:hover {
+            background-color: $thm-black;
+            color: #fff;
+        }
+    }
+
+    .color-1 {
+        .pricing-one__top {
+            &::before {
+                animation-delay: 0s;
+                background-color: #1bc9f4;
+            }
+        }
+
+        .pricing-one__amount {
+            color: #1bc9f4;
+        }
+    }
+
+    .color-2 {
+        .pricing-one__top {
+            &::before {
+                animation-delay: 1s;
+                background-color: #ee539b;
+            }
+        }
+
+        .pricing-one__amount {
+            color: #ee539b;
+        }
+    }
+
+    .color-3 {
+        .pricing-one__top {
+            &::before {
+                animation-delay: 2s;
+                background-color: #ffc516;
+            }
+        }
+
+        .pricing-one__amount {
+            color: #ffc516;
+        }
+    }
+}

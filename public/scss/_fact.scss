@@ -1,0 +1,28 @@
+.fact-one {
+    .inner-container {
+        padding: 115px 0;
+        border-bottom: 2px solid #eff0f9;
+    }
+
+    &__single {
+        position: relative;
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0;
+        line-height: 1em;
+        font-size: 60px;
+        font-weight: 300;
+        color: $thm-black;
+    }
+
+    &__text {
+        margin: 0;
+        line-height: 1em;
+        color: $thm-text-color;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+}

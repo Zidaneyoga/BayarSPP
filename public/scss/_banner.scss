@@ -1,0 +1,189 @@
+.banner-one {
+    background-image: url(../images/banner-bg-1-1.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding-top: 255px;
+    padding-bottom: 337px;
+
+    .container {
+        position: relative;
+    }
+
+    &__moc {
+        position: absolute;
+        bottom: -55px;
+        left: -265px;
+
+        @media(max-width: 1199px) {
+            left: -53%;
+        }
+
+        img.moc-image {
+            position: relative;
+            z-index: 10;
+            animation-name: banner3Shake;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+
+
+
+    &__content {
+        position: relative;
+    }
+
+    &__line {
+        position: absolute;
+        top: -50px;
+        right: 30%;
+        transform-origin: center bottom;
+        animation-fill-mode: both;
+        animation-name: banner3Shake;
+        animation-timing-function: ease-out;
+        animation-duration: 5s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    &__title {
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: -.02em;
+        margin: 0;
+        color: #fff;
+        font-weight: 800;
+        position: relative;
+    }
+
+    &__text {
+        font-size: 18px;
+        color: #fff;
+        line-height: 34px;
+        margin: 0;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        opacity: 0.8;
+    }
+
+    &__btn {
+        font-size: 18px;
+        padding: 18px 58px;
+        border-radius: 35px;
+        background-color: $thm-base-color;
+        color: $thm-black;
+
+        &:hover {
+            background-color: $thm-black;
+            color: #fff;
+        }
+    }
+}
+
+.banner-two {
+    background-image: url(../images/banner-bg-2-2.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-top: 237px;
+    padding-bottom: 125px;
+
+    .container {
+        position: relative;
+    }
+
+    &__moc {
+        position: absolute;
+        bottom: -100px;
+        right: -210px;
+        min-height: 710px;
+        background-image: url(../images/banner-bg-2-1.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+
+        img {
+            position: relative;
+            top: 70px;
+            left: 0px;
+            animation-name: banner3Shake;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+
+
+
+    &__content {
+        position: relative;
+    }
+
+    &__line {
+        position: absolute;
+        top: -40px;
+        left: -80px;
+        transform-origin: center bottom;
+        animation-fill-mode: both;
+        animation-name: banner3Shake;
+        animation-timing-function: ease-out;
+        animation-duration: 5s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    &__title {
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: -.02em;
+        margin: 0;
+        color: $thm-black;
+        font-weight: 800;
+        position: relative;
+    }
+
+    &__text {
+        font-size: 18px;
+        color: #7b7b8c;
+        line-height: 34px;
+        margin: 0;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    &__btn {
+        font-size: 18px;
+        padding: 18px 58px;
+        border-radius: 35px;
+        background-color: $thm-base-color;
+        color: $thm-black;
+
+        &:hover {
+            background-color: $thm-black;
+            color: #fff;
+        }
+    }
+}
+
+
+@keyframes banner3Shake {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+
+    30% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    60% {
+        transform: rotate3d(1, 0, 0, 0deg);
+    }
+
+    80% {
+        transform: rotate3d(0, 0, 1, 5deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+}

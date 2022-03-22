@@ -1,0 +1,50 @@
+.inner-banner {
+    background-color: #fff;
+    background-image: url(../images/inner-banner-bg-1-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding-top: 190px;
+    padding-bottom: 224px;
+
+    &__title {
+        text-align: center;
+        line-height: 1em;
+        font-size: 46px;
+        font-weight: 800;
+        color: #fff;
+        margin: 0;
+    }
+}
+
+
+.thm-breadcrumb {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+        font-size: 16px;
+        font-weight: 500;
+
+        a {
+            color: #ffffff;
+            transition: all .4s ease;
+
+            &:hover {
+                color: $thm-base-color-2;
+            }
+        }
+
+        +li {
+            &::before {
+                content: '.';
+                color: #fff;
+                margin-left: 15px;
+                margin-right: 15px;
+
+            }
+        }
+    }
+}
