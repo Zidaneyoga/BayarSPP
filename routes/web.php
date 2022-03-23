@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+    return view('auth.login');
+// });
+
+Auth::routes();
+
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
 
 Route::get('/user', function () {
     return view('sb-admin1.user');
@@ -85,9 +90,7 @@ Route::get('/aturr', function () {
     return view('sb-admin2.aturr');
 });
 
-Route::get('/datasiswa', function () {
-    return view('sb-admin2.datasiswa');
-});
+Route::resource('/dashboard/data-siswa', 'SiswaController');
 
 Route::get('/dataspp', function () {
     return view('sb-admin2.dataspp');
