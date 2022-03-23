@@ -14,152 +14,155 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-    return view('auth.login');
+   // return view('auth.login');
 // });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+// Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
+Route::get('/', function () {
+    return view('index');
+});
 
 Route::get('/user', function () {
-    return view('sb-admin1.user');
+    return view('User.user');
 });
 
 Route::get('/tables', function () {
-    return view('sb-admin1.tables');
+    return view('User.pembayaran.tables');
 });
 
 Route::get('/login', function () {
-    return view('sb-admin1.login');
+    return view('auth.login_user.login');
 });
 
 Route::get('/register', function () {
-    return view('sb-admin1.register');
+    return view('auth.login_user.register');
 });
 
 Route::get('/profile_sekolah', function () {
-    return view('sb-admin1.profile_sekolah');
+    return view('User.profil.profile_sekolah');
 });
 
 Route::get('/myprofile', function () {
-    return view('sb-admin1.myprofile');
+    return view('User.profil.myprofile');
 });
 
 Route::get('/laporan', function () {
-    return view('sb-admin1.laporan');
+    return view('User.pembayaran.laporan');
 });
 
 Route::get('/konfirmasi', function () {
-    return view('sb-admin1.konfirmasi');
+    return view('User.pembayaran.konfirmasi');
 });
 
 Route::get('/invoice', function () {
-    return view('sb-admin1.invoice');
+    return view('User.pembayaran.invoice');
 });
 
 Route::get('/forgot-password', function () {
-    return view('sb-admin1.forgot-password');
+    return view('User.profil.forgot-password');
 });
 
 Route::get('/editsandi', function () {
-    return view('sb-admin1.editsandi');
+    return view('User.profil.editsandi');
 });
 
 Route::get('/editprofil', function () {
-    return view('sb-admin1.editprofil');
+    return view('User.profil.editprofil');
 });
 
 Route::get('/atur', function () {
-    return view('sb-admin1.atur');
+    return view('User.atur');
 });
 
 Route::get('/bayar', function () {
-    return view('sb-admin1.bayar');
+    return view('User.pembayaran.bayar');
 });
 
 Route::get('/admin', function () {
-    return view('sb-admin2.admin');
+    return view('Admin.admin');
 });
 
 Route::get('/tabless', function () {
-    return view('sb-admin2.tabless');
+    return view('Admin.pembayaran.tabless');
 });
 
 Route::get('/aturr', function () {
-    return view('sb-admin2.aturr');
+    return view('auth.login_admin.aturr');
 });
 
 Route::resource('/dashboard/data-siswa', 'SiswaController');
 
 Route::get('/dataspp', function () {
-    return view('sb-admin2.dataspp');
+    return view('Admin.dataspp.dataspp');
 });
 
 Route::get('/dataspp2', function () {
-    return view('sb-admin2.dataspp2');
+    return view('Admin.dataspp.dataspp2');
 });
 
 Route::get('/edit_siswa', function () {
-    return view('sb-admin2.edit_siswa');
+    return view('Admin.datasiswa.edit_siswa');
 });
 
 Route::get('/editbayar', function () {
-    return view('sb-admin2.editbayar');
+    return view('Admin.pembayaran.editbayar');
 });
 
 Route::get('/editprofile', function () {
-    return view('sb-admin2.editprofile');
+    return view('Admin.profil.editprofile');
 });
 
 Route::get('/editsandii', function () {
-    return view('sb-admin2.editsandii');
+    return view('Admin.profil.editsandii');
 });
 
 Route::get('/forgot-passwordd', function () {
-    return view('sb-admin2.forgot-passwordd');
+    return view('auth.login_admin.forgot-passwordd');
 });
 
 Route::get('/history', function () {
-    return view('sb-admin2.history');
+    return view('Admin.pembayaran.history');
 });
 
 Route::get('/historypembayaran', function () {
-    return view('sb-admin2.historypembayaran');
+    return view('Admin.pembayaran.historypembayaran');
 });
 
 Route::get('/kelas_X', function () {
-    return view('sb-admin2.kelas_X');
+    return view('Admin.setting.kelas_X');
 });
 
 Route::get('/kelas_XI', function () {
-    return view('sb-admin2.kelas_XI');
+    return view('Admin.setting.kelas_XI');
 });
 
 Route::get('/kelas_XII', function () {
-    return view('sb-admin2.kelas_XII');
+    return view('Admin.setting.kelas_XII');
 });
 
 Route::get('/kelas_xrpl', function () {
-    return view('sb-admin2.kelas_xrpl');
+    return view('Admin.kelas_xrpl');
 });
 
 Route::get('/loginn', function () {
-    return view('sb-admin2.loginn');
+    return view('auth.login_admin.loginn');
 });
 
 Route::get('/myprofilee', function () {
-    return view('sb-admin2.myprofilee');
+    return view('Admin.profil.myprofilee');
 });
 
 Route::get('/profile_siswa', function () {
-    return view('sb-admin2.profile_siswa');
+    return view('Admin.profil.profile_siswa');
 });
 
 Route::get('/registerr', function () {
-    return view('sb-admin2.registerr');
+    return view('auth.login_admin.registerr');
 });
 
 Route::get('/setting_pembayaran', function () {
-    return view('sb-admin2.setting_pembayaran');
+    return view('Admin.setting.setting_pembayaran');
 });
