@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,156 +15,94 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-   // return view('auth.login');
-// });
-
-// Auth::routes();
-
-// Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
-Route::get('/user', function () {
-    return view('User.user');
+Route::get('admin/datasiswa',[EmployeeController::class, 'index'])->name('datasiswa');
+
+Route::get('/tambahdata',[EmployeeController::class, 'tambahdata'])->name('tambahdata');
+
+Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('insertdata');
+
+Route::get('admin/tampildata{id}',[EmployeeController::class, 'tampildata'])->name('tampildata');
+
+Route::get('admin/profilesiswa{id}',[EmployeeController::class, 'profilesiswa'])->name('profilesiswa');
+
+Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name('updatedata');
+
+Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
+
+Route::get('admin/historypembayaran{id}',[EmployeeController::class, 'historypembayaran'])->name('historypembayaran');
+
+Route::get('admin/profilesekolah{id}',[EmployeeController::class, 'profilesekolah'])->name('profilesekolah');
+
+Route::post('/updateprofilesekolah/{id}',[EmployeeController::class, 'updateprofilesekolah'])->name('updateprofilesekolah');
+
+Route::get('admin/editprofilesekolah{id}',[EmployeeController::class, 'editprofilesekolah'])->name('editprofilesekolah');
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
 });
 
-Route::get('/tables', function () {
-    return view('User.pembayaran.tables');
+Route::get('/admin/filterdatasiswa', function () {
+    return view('admin.filterdatasiswa');
 });
 
-Route::get('/login', function () {
-    return view('auth.login_user.login');
+Route::get('/admin/filterdatapembayaran', function () {
+    return view('admin.filterdatapembayaran');
 });
 
-Route::get('/register', function () {
-    return view('auth.login_user.register');
+Route::get('admin/datapembayaran',[EmployeeController::class, 'datapembayaran'])->name('datapembayaran');
+
+Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
+
+Route::get('admin/editdatapembayaran{id}',[EmployeeController::class, 'editdatapembayaran'])->name('editdatapembayaran');
+
+Route::post('/updatedatapembayaran/{id}',[EmployeeController::class, 'updatedatapembayaran'])->name('updatedatapembayaran');
+
+Route::get('/admin/kelas_x', function () {
+    return view('admin.kelas_x');
 });
 
-Route::get('/profile_sekolah', function () {
-    return view('User.profil.profile_sekolah');
+Route::get('/admin/kelas_xi', function () {
+    return view('admin.kelas_xi');
 });
 
-Route::get('/myprofile', function () {
-    return view('User.profil.myprofile');
+Route::get('/admin/kelas_xii', function () {
+    return view('admin.kelas_xii');
 });
 
-Route::get('/laporan', function () {
-    return view('User.pembayaran.laporan');
+Route::get('/admin/filterhistory', function () {
+    return view('admin.filterhistory');
 });
 
-Route::get('/konfirmasi', function () {
-    return view('User.pembayaran.konfirmasi');
+
+Route::get('/admin/editsandi', function () {
+    return view('admin.editsandi');
 });
 
-Route::get('/invoice', function () {
-    return view('User.pembayaran.invoice');
+Route::get('user/profilesiswa{id}',[EmployeeController::class, 'profileuser'])->name('profilesiswa');
+
+Route::get('user/editprofilesiswa{id}',[EmployeeController::class, 'editprofilesiswa'])->name('editprofilesiswa');
+
+Route::post('/updateprofilesiswa/{id}',[EmployeeController::class, 'updateprofilesiswa'])->name('updateprofilesiswa');
+
+Route::get('user/dashboard{id}',[EmployeeController::class, 'dashboard'])->name('dashboard');
+
+
+Route::get('user/profilesekolah{id}',[EmployeeController::class, 'profilesekolahuser'])->name('profilesekolah');
+
+Route::get('/user/tagihanpembayaran', function () {
+    return view('user.tagihanpembayaran');
 });
 
-Route::get('/forgot-password', function () {
-    return view('User.profil.forgot-password');
-});
+Route::get('user/tagihanpembayaran{id}',[EmployeeController::class, 'tagihanpembayaran'])->name('tagihanpembayaran');
 
-Route::get('/editsandi', function () {
-    return view('User.profil.editsandi');
-});
+Route::get('user/bayarspp{id}',[EmployeeController::class, 'bayarspp'])->name('bayarspp');
 
-Route::get('/editprofil', function () {
-    return view('User.profil.editprofil');
-});
+Route::get('user/laporanpembayaran{id}',[EmployeeController::class, 'laporanpembayaran'])->name('laporanpembayaran');
 
-Route::get('/atur', function () {
-    return view('User.atur');
-});
-
-Route::get('/bayar', function () {
-    return view('User.pembayaran.bayar');
-});
-
-Route::get('/admin', function () {
-    return view('Admin.admin');
-});
-
-Route::get('/tabless', function () {
-    return view('Admin.pembayaran.tabless');
-});
-
-Route::get('/aturr', function () {
-    return view('auth.login_admin.aturr');
-});
-
-Route::resource('/dashboard/data-siswa', 'SiswaController');
-
-Route::get('/dataspp', function () {
-    return view('Admin.dataspp.dataspp');
-});
-
-Route::get('/dataspp2', function () {
-    return view('Admin.dataspp.dataspp2');
-});
-
-Route::get('/edit_siswa', function () {
-    return view('Admin.datasiswa.edit_siswa');
-});
-
-Route::get('/editbayar', function () {
-    return view('Admin.pembayaran.editbayar');
-});
-
-Route::get('/editprofile', function () {
-    return view('Admin.profil.editprofile');
-});
-
-Route::get('/editsandii', function () {
-    return view('Admin.profil.editsandii');
-});
-
-Route::get('/forgot-passwordd', function () {
-    return view('auth.login_admin.forgot-passwordd');
-});
-
-Route::get('/history', function () {
-    return view('Admin.pembayaran.history');
-});
-
-Route::get('/historypembayaran', function () {
-    return view('Admin.pembayaran.historypembayaran');
-});
-
-Route::get('/kelas_X', function () {
-    return view('Admin.setting.kelas_X');
-});
-
-Route::get('/kelas_XI', function () {
-    return view('Admin.setting.kelas_XI');
-});
-
-Route::get('/kelas_XII', function () {
-    return view('Admin.setting.kelas_XII');
-});
-
-Route::get('/kelas_xrpl', function () {
-    return view('Admin.kelas_xrpl');
-});
-
-Route::get('/loginn', function () {
-    return view('auth.login_admin.loginn');
-});
-
-Route::get('/myprofilee', function () {
-    return view('Admin.profil.myprofilee');
-});
-
-Route::get('/profile_siswa', function () {
-    return view('Admin.profil.profile_siswa');
-});
-
-Route::get('/registerr', function () {
-    return view('auth.login_admin.registerr');
-});
-
-Route::get('/setting_pembayaran', function () {
-    return view('Admin.setting.setting_pembayaran');
+Route::get('/user/editsandi', function () {
+    return view('user.editsandi');
 });
