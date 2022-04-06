@@ -27,11 +27,11 @@ Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('inse
 
 Route::get('admin/tampildata{id}',[EmployeeController::class, 'tampildata'])->name('tampildata');
 
-Route::get('admin/profilesiswa{id}',[EmployeeController::class, 'profilesiswa'])->name('profilesiswa');
-
 Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name('updatedata');
 
 Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
+
+Route::get('admin/profilesiswa{id}',[EmployeeController::class, 'profilesiswa'])->name('profilesiswa');
 
 Route::get('admin/historypembayaran{id}',[EmployeeController::class, 'historypembayaran'])->name('historypembayaran');
 
@@ -55,23 +55,35 @@ Route::get('/admin/filterdatapembayaran', function () {
 
 Route::get('admin/datapembayaran',[EmployeeController::class, 'datapembayaran'])->name('datapembayaran');
 
-Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
+Route::get('/delete/{id}',[EmployeeController::class, 'deletedatapembayaran'])->name('delete');
 
 Route::get('admin/editdatapembayaran{id}',[EmployeeController::class, 'editdatapembayaran'])->name('editdatapembayaran');
 
 Route::post('/updatedatapembayaran/{id}',[EmployeeController::class, 'updatedatapembayaran'])->name('updatedatapembayaran');
 
-Route::get('/admin/kelas_x', function () {
-    return view('admin.kelas_x');
-});
+Route::get('admin/kelas_x',[EmployeeController::class, 'kelas_x'])->name('kelas_x');
 
-Route::get('/admin/kelas_xi', function () {
-    return view('admin.kelas_xi');
-});
+Route::get('admin/editdatakelas_x{id}',[EmployeeController::class, 'editdatakelasx'])->name('editdatakelasx');
 
-Route::get('/admin/kelas_xii', function () {
-    return view('admin.kelas_xii');
-});
+Route::post('/updatekelas_x/{id}',[EmployeeController::class, 'updatekelas_x'])->name('updatekelas_x');
+
+Route::get('kelas_x/delete/{id}',[EmployeeController::class, 'deletedatakelas_x'])->name('delete');
+
+Route::get('admin/kelas_xi',[EmployeeController::class, 'kelas_xi'])->name('kelas_xi');
+
+Route::get('admin/editdatakelas_XI{id}',[EmployeeController::class, 'editdatakelasxi'])->name('editdatakelasxi');
+
+Route::post('/updatekelas_xi/{id}',[EmployeeController::class, 'updatekelas_xi'])->name('updatekelas_xi');
+
+Route::get('/delete/{id}',[EmployeeController::class, 'deletedatakelas_xi'])->name('delete');
+
+Route::get('admin/kelas_xii',[EmployeeController::class, 'kelas_xii'])->name('kelas_xii');
+
+Route::get('admin/editdatakelas_Xll{id}',[EmployeeController::class, 'editdatakelasxii'])->name('editdatakelasxii');
+
+Route::post('/updatekelas_xii/{id}',[EmployeeController::class, 'updatekelas_xii'])->name('updatekelas_xii');
+
+Route::get('/delete/{id}',[EmployeeController::class, 'deletedatakelas_xii'])->name('deletedata');
 
 Route::get('/admin/filterhistory', function () {
     return view('admin.filterhistory');

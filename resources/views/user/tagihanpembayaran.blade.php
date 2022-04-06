@@ -46,8 +46,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link active" href="dashboard1">
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard1">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -74,8 +74,8 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tagihanpembayaran1">
+            <li class="nav-item active">
+                <a class="nav-link active" href="tagihanpembayaran1">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>
@@ -133,7 +133,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $data->nama }}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('img/user.png') }}">
+                                    src="{{ asset('fotosiswa/'.$data->foto) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -188,11 +188,11 @@
                                             <td class="text-center">1</td>
                                             <td class="text-center">Juli</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center"><a class="badge badge-success mr-1" data-toggle="modal">Lunas</a></td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="bayarspp1" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -202,11 +202,11 @@
                                             <td class="text-center">2</td>
                                             <td class="text-center">Agustus</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Lunas</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -216,11 +216,11 @@
                                             <td class="text-center">3</td>
                                             <td class="text-center">September</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Lunas</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -230,11 +230,11 @@
                                             <td class="text-center">4</td>
                                             <td class="text-center">Oktober</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Lunas</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -244,11 +244,11 @@
                                             <td class="text-center">5</td>
                                             <td class="text-center">November</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Lunas</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -258,11 +258,11 @@
                                             <td class="text-center">6</td>
                                             <td class="text-center">Desember</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Lunas</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -272,11 +272,11 @@
                                             <td class="text-center">7</td>
                                             <td class="text-center">Januari</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Belum Lunas</td>
+                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -286,11 +286,11 @@
                                             <td class="text-center">8</td>
                                             <td class="text-center">Februari</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Belum Lunas</td>
+                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -300,11 +300,11 @@
                                             <td class="text-center">9</td>
                                             <td class="text-center">Maret</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Belum Lunas</td>
+                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -314,11 +314,11 @@
                                             <td class="text-center">10</td>
                                             <td class="text-center">April</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Belum Lunas</td>
+                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -328,11 +328,11 @@
                                             <td class="text-center">11</td>
                                             <td class="text-center">Mei</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Belum Lunas</td>
+                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>
@@ -342,11 +342,11 @@
                                             <td class="text-center">12</td>
                                             <td class="text-center">Juni</td>
                                             <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-center">Belum Lunas</td>
+                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
                                             <td class="text-center">
 
-                                                <a href="/bayar" class="btn btn-success btn-icon-split">
-                                                    <span class="text">Bayar</span>
+                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
+                                                    <span class="text"><b>Bayar</b></span>
                                                 </a>
 
                                             </td>

@@ -82,9 +82,9 @@
             <a class="nav-link" href="filterdatapembayaran">
                 <i class="fas fa-fw fa-cash-register"></i>
                 <span>Data Pembayaran</span></a>
-          </li>
+        </li>
 
-          <li class="nav-item active">
+        <li class="nav-item active">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
@@ -93,7 +93,7 @@
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Pembayaran:</h6>
+                        <h6 class="collapse-header">Data Pembayaran :</h6>
                         <a class="collapse-item" href="kelas_x">X</a>
                         <a class="collapse-item" href="kelas_xi">XI</a>
                         <a class="collapse-item active" href="kelas_xii">XII</a>
@@ -176,7 +176,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">SMKN 8</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/smk8.png">
+                                    src="{{ asset('img/smk8.png') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -185,7 +185,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="/editsandii">
+                                <a class="dropdown-item" href="#">
                                     <i class="fas fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Ganti Kata Sandi
                                 </a>
@@ -229,50 +229,28 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Bagas</td>
-                                            <td class="text-center">4144</td>
-                                            <td class="text-center">XII RPL</td>
-                                            <td>September</td>
-                                            <th class="text-center">12-09-2020</th>
-                                            <td>Rp 100.000,00</td>
-                                            <td class="text-center">Lunas</td>
-                                            <td class="text-center">
-                                                
-                                            <a href="/edit_siswa" class="btn btn-warning btn-icon-split mx-2">
-                                                    <span class="icon text-white-30">
-                                                    <i class="fas fa-edit"></i>
-                                                    </span>
-                                                <span class="text">edit</span>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-icon-split">
-                                                    <span class="icon text-white-30">
-                                                    <i class="fas fa-trash"></i>
-                                                    </span>
-                                                <span class="text">hapus</span>
-                                                </a>
-                              
 
-                                                </td>
-                                        </tr>
+                                    @foreach($data as $row)                                   
+
+                                        
                                         
                                         <tr>
-                                            <td>Edo</td>
-                                            <td class="text-center">4145</td>
-                                            <td class="text-center">XII TKJ</td>
+                                            <td>{{ $row->nama }}</td>
+                                            <td class="text-center">{{ $row->nisn }}</td>
+                                            <td class="text-center">{{ $row->jurusan }}</td>
                                             <td>September</td>
                                             <th class="text-center">13-08-2020</th>
                                             <td>Rp 100.000,00</td>
-                                            <td class="text-center">Lunas</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
                                                 
-                                            <a href="/edit_siswa" class="btn btn-warning btn-icon-split mx-2">
+                                            <a href="editdatakelas_Xll1" class="btn btn-warning btn-icon-split mx-2">
                                                     <span class="icon text-white-30">
                                                     <i class="fas fa-edit"></i>
                                                     </span>
                                                 <span class="text">edit</span>
                                                 </a>
-                                                <a href="#" class="btn btn-danger btn-icon-split">
+                                                <a href="/delete/{{ $row->id }}" class="btn btn-danger btn-icon-split delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" >
                                                     <span class="icon text-white-30">
                                                     <i class="fas fa-trash"></i>
                                                     </span>
@@ -282,6 +260,9 @@
 
                                                 </td>
                                         </tr>
+                                      
+                                    @endforeach  
+                                        
                                     </tbody>
                                     </table>
                             </div>

@@ -219,7 +219,7 @@
                         </div>
                         <div class="card-body">
                         <center><div class="col-md-">
-							<img src="{{ asset('img/user.png') }}" class="img-profile rounded-circle"
+                        <img src="{{ asset('fotosiswa/'.$data->foto) }}" class="img-profile rounded-circle" width="200" height="200">
 						</div><center>
 								<div class="col-md- mt-4">
 									<table class="table table-hover">

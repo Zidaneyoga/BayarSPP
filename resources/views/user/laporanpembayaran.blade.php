@@ -46,8 +46,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link active" href="dashboard1">
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard1">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -80,8 +80,8 @@
                     <span>Tagihan Pembayaran</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="laporanpembayaran1">
+            <li class="nav-item active">
+                <a class="nav-link active" href="laporanpembayaran1">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Laporan Pembayaran</span></a>
             </li>
@@ -127,7 +127,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $data->nama }}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('img/user.png') }}">
+                                    src="{{ asset('fotosiswa/'.$data->foto) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

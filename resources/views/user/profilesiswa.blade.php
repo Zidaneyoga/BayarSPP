@@ -43,8 +43,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link active" href="dashboard1">
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard1">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -58,8 +58,8 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="profilesiswa1">
+            <li class="nav-item active">
+                <a class="nav-link active" href="profilesiswa1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
@@ -150,7 +150,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $data->nama }}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('img/user.png') }}">
+                                    src="{{ asset('fotosiswa/'.$data->foto) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -200,7 +200,7 @@
                         </div>
                         <div class="card-body">
                         <center><div class="col-md-">
-							<img src="{{ asset('img/user.png') }}" class="img-profile rounded-circle"
+                            <img src="{{ asset('fotosiswa/'.$data->foto) }}" class="img-profile rounded-circle" width="200" height="200">
 						</div><center>
 								<div class="col-md- mt-4">
 									<table class="table table-hover">

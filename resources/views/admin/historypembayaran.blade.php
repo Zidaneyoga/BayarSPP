@@ -55,58 +55,55 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-
-           <!-- Heading -->
-           <div class="sidebar-heading">
-            Menu
-        </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-
-            <a class="nav-link" href="/myprofilee">
-                <i class="fas fa-fw fa-user"></i>
-                <span>My Profile</span></a>
-        </li>
-
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/tabless">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Data Siswa</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="/dataspp">
-                <i class="fas fa-fw fa-cash-register"></i>
-                <span>Data Pembayaran</span></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Setting Pembayaran</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Pembayaran kelas:</h6>
-                    <a class="collapse-item" href="/setting_pembayaran">setting</a>
-                    <a class="collapse-item" href="/kelas_X">X</a>
-                    <a class="collapse-item" href="/kelas_XI">XI</a>
-                    <a class="collapse-item" href="/kelas_XII">XII</a>
-                </div>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Menu
             </div>
-        </li>
 
-         <!-- Nav Item - History -->
-         <li class="nav-item active">
-            <a class="nav-link active" href="/historypembayaran">
-                <i class="fas fa-fw fa-history"></i>
-                <span>History Pembayaran</span></a>
-        </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="profilesekolah1">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>My Profile</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="filterdatasiswa">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Siswa</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="filterdatapembayaran">
+                    <i class="fas fa-fw fa-cash-register"></i>
+                    <span>Data Pembayaran</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Setting Pembayaran</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Pembayaran kelas:</h6>
+                        <a class="collapse-item" href="/setting_pembayaran">setting</a>
+                        <a class="collapse-item" href="kelas_x">X</a>
+                        <a class="collapse-item" href="kelas_xi">XI</a>
+                        <a class="collapse-item" href="kelas_xii">XII</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - History -->
+            <li class="nav-item active">
+                <a class="nav-link active" href="filterhistory">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>History Pembayaran</span></a>
+            </li>
         
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -310,7 +307,7 @@
                                         <td class="text-center">September</td>
                                         <th class="text-center">12-09-2020</th>
                                         <th class="text-center">Rp 100.000,00</th>
-                                        <th class="text-center">Lunas</td>
+                                        <td class="text-success text-center"><b>Lunas</b></td>
                                         <th class="text-center">Rp 1.100.000,00</th>
                                         
                                     </tr>

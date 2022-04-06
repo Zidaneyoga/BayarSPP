@@ -60,7 +60,7 @@ class EmployeeController extends Controller
     public function delete($id){
         $data= Employee::find($id);
         $data->delete();
-        return redirect()->route('siswa')->with('success','Data Berhasil Di Hapus');
+        return redirect()->route('datasiswa')->with('success','Data Berhasil Di Hapus');
     }
 
     public function historypembayaran($id){
@@ -108,6 +108,84 @@ class EmployeeController extends Controller
         $data= Employee::find($id);
         $data->update($request->all());
         return redirect()->route('datapembayaran')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function deletedatapembayaran($id){
+        $data= Employee::find($id);
+        $data->delete();
+        return redirect()->route('datapembayaran')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function kelas_x(){
+
+        $data = Employee::all();
+        return view ('admin.kelas_x',compact('data'));
+    }
+
+    public function editdatakelasx($id){
+        
+        $data= Employee::find($id);
+        return view('admin.editdatakelas_x', compact('data'));
+    }
+
+    public function updatekelas_x(Request $request, $id){
+        $data= Employee::find($id);
+        $data->update($request->all());
+        return redirect()->route('kelas_x')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function deletedatakelas_x($id){
+        $data= Employee::find($id);
+        $data->delete();
+        return redirect()->route('kelas_x')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function kelas_xi(){
+
+        $data = Employee::all();
+        return view ('admin.kelas_xi',compact('data'));
+    }
+
+    public function editdatakelasxi($id){
+        
+        $data= Employee::find($id);
+        return view('admin.editdatakelas_XI', compact('data'));
+    }
+
+    public function updatekelas_xi(Request $request, $id){
+        $data= Employee::find($id);
+        $data->update($request->all());
+        return redirect()->route('kelas_xi')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function deletedatakelas_xi($id){
+        $data= Employee::find($id);
+        $data->delete();
+        return redirect()->route('kelas_xi')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function kelas_xii(){
+
+        $data = Employee::all();
+        return view ('admin.kelas_xii',compact('data'));
+    }
+
+    public function editdatakelasxii($id){
+        
+        $data= Employee::find($id);
+        return view('admin.editdatakelas_Xll', compact('data'));
+    }
+
+    public function updatekelas_xii(Request $request, $id){
+        $data= Employee::find($id);
+        $data->update($request->all());
+        return redirect()->route('kelas_xii')->with('success','Data Berhasil Di Hapus');
+    }
+
+    public function deletedatakelas_xii($id){
+        $data= Employee::find($id);
+        $data->delete();
+        return redirect()->route('kelas_xii')->with('success','Data Berhasil Di Hapus');
     }
 
     public function profileuser($id){

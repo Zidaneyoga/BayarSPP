@@ -285,7 +285,7 @@
                                         <tr>
                                           <th scope="row" class="text-center">{{ $index + $data->firstItem() }}</th>
                                             <td class="text-center">
-                                                <img src="{{ asset('fotosiswa/'.$row->foto) }}" alt="" style="width: 80px;" >
+                                                <img src="{{ asset('fotosiswa/'.$row->foto) }}" class="img-profile rounded-circle" width="50" height="50">
                                             </td>
                                             <td class="text-center">{{ $row->nisn }}</td>
                                             <td class="text-center">{{ $row->nama }}</td>
@@ -297,7 +297,7 @@
                                           
                                                 <a href="profilesiswa{{ $row->id }}" class="btn btn-info"><i class="fas fa-book-reader"></i></a>
                                                 <a href="tampildata{{ $row->id }}" class="btn btn-success"><i class="fa fa-user-edit"></i></a>
-                                                <a href="#" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" ><i class="fa fa-trash-alt"></i></a>
+                                                <a href="/delete/{{ $row->id }}" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" ><i class="fa fa-trash-alt"></i></a>
                                                  
                                             </td>
                                         </tr>

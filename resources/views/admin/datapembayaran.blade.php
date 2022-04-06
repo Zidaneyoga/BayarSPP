@@ -392,12 +392,12 @@
                                             <th class="text-center">12-09-2020</th>
                                             <td class="text-center">Rp 100.000</td>
                                             <td class="text-center">Rp 1.100.000</td>
-                                            <td class="text-center">Lunas</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
                                                 
-                                                <a href="editdatapembayaran1" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                                <a href="editdatapembayaran{id}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
-                                                <a href="#" class="btn btn-danger delete "><i class="fa fa-trash"></i></a>
+                                                <a href="/delete/{{ $row->id }}" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" ><i class="fa fa-trash-alt"></i></a>
                               
 
                                             </td>
