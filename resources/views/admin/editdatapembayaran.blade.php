@@ -226,13 +226,47 @@
                               </div>
                               <div class="form-group">
                                 <label>Kelas / Jurusan</label>
-                                <select class="form-control" name="jurusan">
-                                  <option selected>{{ $data->jurusan }}</option>
-                                  <option value="RPL">Rekayasa Perangkat Lunak</option>
-                                  <option value="TKJ">Teknik Komputer Jaringan</option>
-                                  <option value="ELIN">Elektronika Industri</option>
-                                  <option value="MEKATRONIKA">Mekanika, Elektronika, Informatika</option>
+                                <select class="form-control" name="kelas_jurusan">
+                                  <option selected>{{ $data->kelas_jurusan }}</option>
+                                  <option>X RPL</option>
+                                  <option>X TKJ</option>
+                                  <option>X ELIN</option>
+                                  <option>X MEKATRONIKA</option>
+                                  <option>XI RPL</option>
+                                  <option>XI TKJ</option>
+                                  <option>XI ELIN</option>
+                                  <option>XI MEKATRONIKA</option>
+                                  <option>XII RPL</option>
+                                  <option>XII TKJ</option>
+                                  <option>XII ELIN</option>
+                                  <option>XII MEKATRONIKA</option>
                                 </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Bulan Pembayaran</label>
+                                <select class="form-control" name="bulan_bayar">
+                                  <option selected>{{ $data->bulan_bayar }}</option>
+                                  <option>Januari</option>
+                                  <option>Februari</option>
+                                  <option>Maret</option>
+                                  <option>April</option>
+                                  <option>Mei</option>
+                                  <option>Juni</option>
+                                  <option>Juli</option>
+                                  <option>Agustus</option>
+                                  <option>September</option>
+                                  <option>Oktober</option>
+                                  <option>November</option>
+                                  <option>Desember</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                    <label for="name">Jumlah Pembayaran</label>
+                                    <input type="text" class="form-control" name="jumlah_bayar" placeholder="Masukkan Jumlah Pembayaran" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->jumlah_bayar }}">
+                              </div>
+                              <div class="form-group">
+                                    <label for="name">Jumlah Tagihan</label>
+                                    <input type="text" class="form-control" name="sisa_tagihan" placeholder="Masukkan Jumlah Tagihan" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->sisa_tagihan }}">
                               </div>
                               @csrf
                               

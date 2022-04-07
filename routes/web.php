@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DataPembayaranController;
 use App\Http\Controllers\DatabayarController;
 
 
@@ -48,10 +49,10 @@ Route::get('/admin/filterdatasiswa', function () {
 
 // data bayar 
 
-Route::get('admin/datapembayaran',[EmployeeController::class, 'datapembayaran'])->name('datapembayaran');
-Route::get('/delete/{id}',[EmployeeController::class, 'deletedatapembayaran'])->name('delete');
-Route::get('admin/editdatapembayaran{id}',[EmployeeController::class, 'editdatapembayaran'])->name('editdatapembayaran');
-Route::post('/updatedatapembayaran/{id}',[EmployeeController::class, 'updatedatapembayaran'])->name('updatedatapembayaran');
+Route::get('admin/datapembayaran',[DataPembayaranController::class, 'datapembayaran'])->name('datapembayaran');
+Route::get('/deletedata/{id}',[DataPembayaranController::class, 'deletedata'])->name('deletedata');
+Route::get('admin/editdatapembayaran{id}',[DataPembayaranController::class, 'editdatapembayaran'])->name('editdatapembayaran');
+Route::post('/updatedatapembayaran/{id}',[DataPembayaranController::class, 'updatedatapembayaran'])->name('updatedatapembayaran');
 
 Route::get('/admin/filterdatapembayaran', function () {
     return view('admin.filterdatapembayaran');

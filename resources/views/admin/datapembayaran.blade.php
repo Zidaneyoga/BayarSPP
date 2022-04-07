@@ -387,17 +387,17 @@
                                         <tr>
                                             <td class="text-center">{{ $row->nama }}</td>
                                             <td class="text-center">{{ $row->nisn }}</td>
-                                            <td class="text-center">{{ $row->jurusan }}</td>
-                                            <td class="text-center">September</td>
+                                            <td class="text-center">{{ $row->kelas_jurusan }}</td>
+                                            <td class="text-center">{{ $row->bulan_bayar }}</td>
                                             <th class="text-center">12-09-2020</th>
-                                            <td class="text-center">Rp 100.000</td>
-                                            <td class="text-center">Rp 1.100.000</td>
+                                            <td class="text-center">{{ $row->jumlah_bayar }}</td>
+                                            <td class="text-center">{{ $row->sisa_tagihan }}</td>
                                             <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
                                                 
-                                                <a href="editdatapembayaran{id}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                                <a href="editdatapembayaran1" class="btn btn-warning"><i class="fa fa-edit"></i></a>
 
-                                                <a href="/delete/{{ $row->id }}" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" ><i class="fa fa-trash-alt"></i></a>
+                                                <a href="/deletedata/{{ $row->id }}" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" ><i class="fa fa-trash-alt"></i></a>
                               
 
                                             </td>

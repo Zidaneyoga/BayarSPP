@@ -92,30 +92,7 @@ class EmployeeController extends Controller
         return redirect('admin/profilesekolah1')->with('success','Data Berhasil Di Update');
     }
 
-    public function editdatapembayaran($id){
-        
-        $data= Employee::find($id);
-        return view('admin.editdatapembayaran', compact('data'));
-    }
-
-    public function datapembayaran(){
-
-        $data = Employee::all();
-        return view ('admin.datapembayaran',compact('data'));
-    }
-
-    public function updatedatapembayaran(Request $request, $id){
-        $data= Employee::find($id);
-        $data->update($request->all());
-        return redirect()->route('datapembayaran')->with('success','Data Berhasil Di Hapus');
-    }
-
-    public function deletedatapembayaran($id){
-        $data= Employee::find($id);
-        $data->delete();
-        return redirect()->route('datapembayaran')->with('success','Data Berhasil Di Hapus');
-    }
-
+    
     public function kelas_x(){
 
         $data = Employee::all();
