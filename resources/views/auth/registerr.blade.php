@@ -71,6 +71,15 @@
                                     </div>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <input type="number" name="npsn" class="form-control form-control-user @error('npsn') is-invalid @enderror" id="npsn"
+                                        placeholder="NPSN" required value="{{ old('npsn') }}">
+                                    @error('npsn')
+                                    <div class="invalid-feedback text-left">
+                                    {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" name="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password"
