@@ -188,11 +188,7 @@ class EmployeeController extends Controller
         return redirect('user/profilesiswa1')->with('success','Data Berhasil Di Update');
     }
     
-    public function bayarspp($id){
-        
-        $data= Employee::find($id);
-        return view('user.bayarspp', compact('data'));
-    }
+    
 
     public function dashboard($id){
         
@@ -216,6 +212,19 @@ class EmployeeController extends Controller
         
         $data= Employee::find($id);
         return view('user.laporanpembayaran', compact('data'));
+    }
+
+
+    public function bayarspp($id){
+        
+        $data= Employee::find($id);
+        return view('user.bayarspp', compact('data'));
+    }
+
+    public function konfirmasi($id){
+        
+        $data= Employee::find($id);
+        return view('user.konfirmasi', compact('data'));
     }
 }
 

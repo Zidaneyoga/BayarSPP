@@ -257,7 +257,7 @@
                                 </span>
                                 <span class="text">Kembali</span>
                             </a>
-                        <a href="/konfirmasi" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Konfirmasi</a>
+                        <a href="konfirmasi1" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Konfirmasi</a>
                         </left>
                      </div>
                   </form>

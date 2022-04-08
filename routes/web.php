@@ -116,6 +116,7 @@ Route::get('user/profilesekolah{id}',[EmployeeController::class, 'profilesekolah
 Route::get('user/tagihanpembayaran{id}',[EmployeeController::class, 'tagihanpembayaran'])->name('tagihanpembayaran');
 Route::get('user/bayarspp{id}',[EmployeeController::class, 'bayarspp'])->name('bayarspp');
 Route::get('user/laporanpembayaran{id}',[EmployeeController::class, 'laporanpembayaran'])->name('laporanpembayaran');
+Route::get('user/konfirmasi{id}',[EmployeeController::class, 'konfirmasi'])->name('konfirmasi');
 
 Route::get('/user/tagihanpembayaran', function () {
     return view('user.tagihanpembayaran');
