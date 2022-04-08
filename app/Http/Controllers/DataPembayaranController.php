@@ -10,13 +10,13 @@ class DataPembayaranController extends Controller
     public function editdatapembayaran($id){
         
         $data= DataPembayaran::find($id);
-        return view('admin.editdatapembayaran', compact('data'));
+        return view('admin.pembayaran.editdatapembayaran', compact('data'));
     }
 
     public function datapembayaran(){
 
         $data = DataPembayaran::all();
-        return view ('admin.datapembayaran',compact('data'));
+        return view ('admin.pembayaran.datapembayaran',compact('data'));
     }
 
     public function updatedatapembayaran(Request $request, $id){

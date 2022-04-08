@@ -34,8 +34,8 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-             <!-- Sidebar - Brand -->
-             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <img src="{{ asset('img/bayarSPP-5.png') }}" class="main-logo" width="50" alt="Awesome Image" />
@@ -47,11 +47,11 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
+            
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -62,21 +62,21 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="profilesekolah1">
+
+                <a class="nav-link" href="/profil/profilesekolah1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="filterdatasiswa">
+                <a class="nav-link" href="/datas/filterdatasiswa">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Siswa</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="filterdatapembayaran">
+            <li class="nav-item active">
+                <a class="nav-link active" href="/pembayaran/filterdatapembayaran">
                     <i class="fas fa-fw fa-cash-register"></i>
                     <span>Data Pembayaran</span></a>
               </li>
@@ -91,20 +91,20 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pembayaran kelas:</h6>
                         <a class="collapse-item" href="/setting_pembayaran">setting</a>
-                        <a class="collapse-item" href="kelas_x">X</a>
-                        <a class="collapse-item" href="kelas_xi">XI</a>
-                        <a class="collapse-item" href="kelas_xii">XII</a>
+                        <a class="collapse-item" href="/settingg/kelas_x">X</a>
+                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                        <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - History -->
-            <li class="nav-item active">
-                <a class="nav-link active" href="filterhistory">
+            <li class="nav-item">
+                <a class="nav-link" href="/history/filterhistory">
                     <i class="fas fa-fw fa-history"></i>
                     <span>History Pembayaran</span></a>
             </li>
-        
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -132,12 +132,12 @@
                         </button>
                     </form>
 
-                    <!-- Topbar Search -->
-                    <form
-                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <br>
-                    <p>HISTORY PAYMENT</p> 
-                    </form>
+                     <!-- Topbar Search -->
+                     <form
+                     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                     <br>
+                     <p>DATA PAYMENT</p> 
+                     </form>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -167,18 +167,18 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">SMKN 8</span>
-                                <img class="img-profile rounded-circle"
-                                    src="{{ asset('img/smk8.png') }}">
-                            </a>
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
+                                    <img class="img-profile rounded-circle"
+                                        src="{{ asset('img/smk8.png') }}">
+                                </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="/myprofilee">
+                                <a class="dropdown-item" href="/profil/profilesekolah1">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -202,122 +202,165 @@
 
                 </nav>
                 <!-- End of Topbar -->
+
                 <div class="container-fluid">
-                    
 
-                  <!-- Page Heading -->
-                      <div class="card shadow mb-4">
-                          <div class="card-header py-3">
-                              <h6 class="m-0 font-weight-bold text-primary">History Pembayaran Siswa</h6>
-                          </div>
-                              <div class="card-body">
-                                  <div class="form-group row">
-                                      <label for="" class=" mt-2 mx-5">Cari Siswa</label>
-                                      <div class="col-sm-4 mr-3">
-                                          <div class="input-group">
-                                              <input type="text" class="form-control" autofocus name="r" placeholder="Cari Siswa Berdasarkan NISN" value="{{ $data->nisn }}" required>
-                                              <div class="input-group-append">
-                                                  <button class="btn btn-primary" type="button">
-                                                      <i class="fas fa-search fa-sm"></i>
-                                                  </button>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>    
-                              </div>
-                      </div>
+                <div class="row">
 
-                  
-
-              </div>
-
-              <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Biodata Siswa</h6>
-                    </div>
-                    <div class="card-body">
-                            <table class="table table-striped col-md-9 mt-1  ">
-                            <tr>
-                              <td>NISN</td>
-                              <td>:</td>
-                              <td>{{ $data->nisn }}</td>
-                            </tr>
-                            <tr>
-                              <td>Nama</td>
-                              <td>:</td>
-                              <td>{{ $data->nama }}</td>
-                            </tr>
-                            <tr>
-                              <td>Jenis Kelamin</td>
-                              <td>:</td>
-                              <td>{{ $data->jenis_kelamin }}</td>
-                            </tr>
-                            <tr>
-                              <td>Jurusan</td>
-                              <td>:</td>
-                              <td>{{ $data->jurusan }}</td>
-                            </tr>
-                            <tr>
-                              <td>No Telepon</td>
-                              <td>:</td>
-                              <td>0{{ $data->notelepon }}</td>
-                            </tr>
-                            <tr>
-                              <td>Alamat</td>
-                              <td>:</td>
-                              <td>{{ $data->alamat }}</td>
-                            </tr>
-                                <div class="float-right mr-4">
-                           
-                                    <img src="{{ asset('img/user.png') }}" class="img-thumbnail mt-4" height="550">
+                        
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                           Total Pembayaran (Bulan ini)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 3.800.000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    </div>
                                 </div>
-                            </table>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Tabel Pembayaran Siswa</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead class="text-center thead-light">
-                                    <tr>
-                                        <th scope="col">No Pembayaran</th>
-                                        <th scope="col">Bulan Bayar</th>
-                                        <th scope="col">Tanggal Pembayaran</th>
-                                        <th scope="col">Jumlah Bayar</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Sisa Tagihan</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">123456</td>
-                                        <td class="text-center">September</td>
-                                        <th class="text-center">12-09-2020</th>
-                                        <th class="text-center">Rp 100.000,00</th>
-                                        <td class="text-success text-center"><b>Lunas</b></td>
-                                        <th class="text-center">Rp 1.100.000,00</th>
-                                        
-                                    </tr>
-                                </tbody>
-                            </table>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Tagihan Spp (Monthly)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 1.200.000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Total Pembayaran SPP (Tahun Ini)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 13.200.000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Siswa sudah bayar (Monthly)
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">80%</div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>    
+                   
+
+                <!-- Begin Page Content -->
+
+                
+
+                    <!-- Page Heading -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Filter Data Pembayaran SPP</h6>
+                        </div>
+                        <div class="card-body">
+                          <div class="form-group row">
+                              <label for="" class=" mt-2 mx-5">Kelas</label>
+							        <div class="col-sm-2">
+								        <select class="form-control" name="n">
+											<option  value="">Pilih Kelas</option>
+                                            <option  value="">X</option>
+                                            <option  value="">XI</option>
+                                            <option  value="">XII</option>
+										</select>
+						  	        </div>
+
+                                <label for="" class=" mt-2 mx-5">Jurusan</label>
+							        <div class="col-sm-2">
+								        <select class="form-control" name="n">
+											<option  value="">Pilih Jurusan</option>
+                                            <option  value="">RPL</option>
+                                            <option  value="">TKJ</option>
+                                            <option  value="">ELIN</option>
+                                            <option  value="">MEKATRONIKA</option>
+										</select>
+						  	        </div>
+                            
+                                <label for="" class=" mt-2 mx-5">Bulan</label>
+							        <div class="col-sm-2">
+								        <select class="form-control" name="n">
+                                            <option  value="">Pilih Bulan</option>
+                                            <option  value="">Januari</option>
+                                            <option  value="">Februari</option>
+                                            <option  value="">Maret</option>
+                                            <option  value="">April</option>
+                                            <option  value="">Mei</option>
+                                            <option  value="">Juni</option>
+                                            <option  value="">Juli</option>
+                                            <option  value="">Agustus</option>
+                                            <option  value="">September</option>
+                                            <option  value="">Oktober</option>
+                                            <option  value="">November</option>
+                                            <option  value="">Desember</option>
+									    </select>
+						  	        </div>
+
+                                    <a href="/pembayaran/datapembayaran" class="btn btn-primary btn-icon-split mx-4">
+                                        <span class="icon text-white-30">
+                                        <i class="fas fa-search"></i>
+                                        </span>
+                                        <span class="text">Cari</span>
+                                    </a>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->

@@ -35,7 +35,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
              <!-- Sidebar - Brand -->
-             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <img src="{{ asset('img/bayarSPP-5.png') }}" class="main-logo" width="50" alt="Awesome Image" />
@@ -47,7 +47,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -55,58 +55,55 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-
-           <!-- Heading -->
-           <div class="sidebar-heading">
-            Menu
-        </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-
-            <a class="nav-link" href="profilesekolah1">
-                <i class="fas fa-fw fa-user"></i>
-                <span>My Profile</span></a>
-        </li>
-
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item active">
-            <a class="nav-link active" href="filterdatasiswa">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Data Siswa</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="filterdatapembayaran">
-                <i class="fas fa-fw fa-cash-register"></i>
-                <span>Data Pembayaran</span></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Setting Pembayaran</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Pembayaran kelas:</h6>
-                    <a class="collapse-item" href="/setting_pembayaran">setting</a>
-                    <a class="collapse-item" href="kelas_x">X</a>
-                    <a class="collapse-item" href="kelas_xi">XI</a>
-                    <a class="collapse-item" href="kelas_xii">XII</a>
-                </div>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Menu
             </div>
-        </li>
 
-         <!-- Nav Item - History -->
-         <li class="nav-item">
-            <a class="nav-link" href="filterhistory">
-                <i class="fas fa-fw fa-history"></i>
-                <span>History Pembayaran</span></a>
-        </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="/profil/profilesekolah1">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>My Profile</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/datas/filterdatasiswa">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Siswa</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/pembayaran/filterdatapembayaran">
+                    <i class="fas fa-fw fa-cash-register"></i>
+                    <span>Data Pembayaran</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Setting Pembayaran</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Pembayaran kelas:</h6>
+                        <a class="collapse-item" href="/setting_pembayaran">setting</a>
+                        <a class="collapse-item" href="/settingg/kelas_x">X</a>
+                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                        <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - History -->
+            <li class="nav-item active">
+                <a class="nav-link active" href="/history/filterhistory">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>History Pembayaran</span></a>
+            </li>
         
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -139,7 +136,7 @@
                     <form
                     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <br>
-                    <p>STUDENT DATA</p> 
+                    <p>HISTORY PAYMENT</p> 
                     </form>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -174,14 +171,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">SMKN 8</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{ asset('img/smk8.png') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profilesekolah1">
+                                <a class="dropdown-item" href="/profil/profilesekolah1">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -206,113 +203,121 @@
                 </nav>
                 <!-- End of Topbar -->
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Filter Data Siswa</h6>
-                        </div>
-                        <div class="card-body">
-                          <div class="form-group row">
-
-                            <label for="" class=" mt-2 mx-5">Kelas</label>
-							    <div class="col-sm-2">
-								    <select class="form-control" name="n">
-                                        <option selected><?php echo "XI" ?></option>
-                                        <option  value="">X</option>
-                                        <option  value="">XI</option>
-                                        <option  value="">XII</option>
-									</select>
-						  	    </div>
-
-                            <label for="" class=" mt-2 mx-5">Jurusan</label>
-							    <div class="col-sm-2">
-								    <select class="form-control" name="n">
-                                        <option selected><?php echo "RPL" ?></option>
-                                        <option  value="">RPL</option>
-                                        <option  value="">TKJ</option>
-                                        <option  value="">ELIN</option>
-                                        <option  value="">MEKATRONIKA</option>
-									</select>
-						  	    </div>
-
-                              <a href="#" class="btn btn-primary btn-icon-split mx-5">
-                                <span class="icon text-white-30">
-                                <i class="fas fa-search"></i>
-                                </span>
-                                <span class="text">Cari</span>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-
                     
 
+                  <!-- Page Heading -->
+                      <div class="card shadow mb-4">
+                          <div class="card-header py-3">
+                              <h6 class="m-0 font-weight-bold text-primary">History Pembayaran Siswa</h6>
+                          </div>
+                              <div class="card-body">
+                                  <div class="form-group row">
+                                      <label for="" class=" mt-2 mx-5">Cari Siswa</label>
+                                      <div class="col-sm-4 mr-3">
+                                          <div class="input-group">
+                                              <input type="text" class="form-control" autofocus name="r" placeholder="Cari Siswa Berdasarkan NISN" value="{{ $data->nisn }}" required>
+                                              <div class="input-group-append">
+                                                  <button class="btn btn-primary" type="button">
+                                                      <i class="fas fa-search fa-sm"></i>
+                                                  </button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>    
+                              </div>
+                      </div>
+
+                  
+
+              </div>
+
+              <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Biodata Siswa</h6>
+                    </div>
+                    <div class="card-body">
+                            <table class="table table-striped col-md-9 mt-1  ">
+                            <tr>
+                              <td>NISN</td>
+                              <td>:</td>
+                              <td>{{ $data->nisn }}</td>
+                            </tr>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>{{ $data->nama }}</td>
+                            </tr>
+                            <tr>
+                              <td>Jenis Kelamin</td>
+                              <td>:</td>
+                              <td>{{ $data->jenis_kelamin }}</td>
+                            </tr>
+                            <tr>
+                              <td>Jurusan</td>
+                              <td>:</td>
+                              <td>{{ $data->jurusan }}</td>
+                            </tr>
+                            <tr>
+                              <td>No Telepon</td>
+                              <td>:</td>
+                              <td>0{{ $data->notelepon }}</td>
+                            </tr>
+                            <tr>
+                              <td>Alamat</td>
+                              <td>:</td>
+                              <td>{{ $data->alamat }}</td>
+                            </tr>
+                                <div class="float-right mr-4">
+                           
+                                    <img src="{{ asset('img/user.png') }}" class="img-thumbnail mt-4" height="550">
+                                </div>
+                            </table>
+                    </div>
                 </div>
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+            </div>
+            
+            <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Siswa</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr class="text-center">
-
-                                            <th class="text-center">No</th>
-                                            <th class="text-center">Foto</th>
-                                            <th class="text-center">NISN</th>
-                                            <th class="text-center">Nama Siswa</th>
-                                            <th class="text-center">Jenis Kelamin</th>
-                                            <th class="text-center">Jurusan</th>
-                                            <th class="text-center">No Telepon</th>
-                                            <th class="text-center">Alamat</th>
-                                            <th class="text-center">Aksi</th>
-                                        </tr>
-                                        @php
-                                        $no=1;
-                                        @endphp
-
-                                    </thead>
-                                    <tbody>
-
-                                    @foreach ($data as $index => $row)
-                                        <tr>
-                                          <th scope="row" class="text-center">{{ $index + $data->firstItem() }}</th>
-                                            <td class="text-center">
-                                                <img src="{{ asset('fotosiswa/'.$row->foto) }}" class="img-profile rounded-circle" width="50" height="50">
-                                            </td>
-                                            <td class="text-center">{{ $row->nisn }}</td>
-                                            <td class="text-center">{{ $row->nama }}</td>
-                                            <td class="text-center">{{ $row->jenis_kelamin }}</td>
-                                            <td class="text-center">{{ $row->jurusan }}</td>
-                                            <td class="text-center">0{{ $row->notelepon }}</td>
-                                            <td class="text-center">{{ $row->alamat }}</td>
-                                            <td class="text-center">
-                                          
-                                                <a href="profilesiswa{{ $row->id }}" class="btn btn-info"><i class="fas fa-book-reader"></i></a>
-                                                <a href="tampildata{{ $row->id }}" class="btn btn-success"><i class="fa fa-user-edit"></i></a>
-                                                <a href="/delete/{{ $row->id }}" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" ><i class="fa fa-trash-alt"></i></a>
-                                                 
-                                            </td>
-                                        </tr>
-                                    @endforeach
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <!-- Page Heading -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Tabel Pembayaran Siswa</h6>
                     </div>
-                    <div class="mt-4">
-                      {{ $data->links() }}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead class="text-center thead-light">
+                                    <tr>
+                                        <th scope="col">No Pembayaran</th>
+                                        <th scope="col">Bulan Bayar</th>
+                                        <th scope="col">Tanggal Pembayaran</th>
+                                        <th scope="col">Jumlah Bayar</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Sisa Tagihan</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">123456</td>
+                                        <td class="text-center">September</td>
+                                        <th class="text-center">12-09-2020</th>
+                                        <th class="text-center">Rp 100.000,00</th>
+                                        <td class="text-success text-center"><b>Lunas</b></td>
+                                        <th class="text-center">Rp 1.100.000,00</th>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
+
+            </div>
 
             </div>
             <!-- End of Main Content -->
@@ -374,32 +379,6 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
-
-    <script>
-      $('.delete').click(function(){
-       var siswaid = $(this).attr('data-id')
-       var nama = $(this).attr('data-nama')
- 
-       swal({
-           title: "Apakah kamu yakin?",
-           text: "Kamu akan menghapus data siswa dengan nama "+nama+" ",
-           icon: "warning",
-           buttons: true,
-           dangerMode: true,
-         })
-         .then((willDelete) => {
-           if (willDelete) {
-             window.location = "/delete/"+siswaid+""
-             swal("Data berhasil di hapus", {
-               icon: "success",
-             });
-           } else {
-             swal("Data tidak jadi di hapus");
-           }
-         });
-      });
-   </script>
- 
 
 </body>
 

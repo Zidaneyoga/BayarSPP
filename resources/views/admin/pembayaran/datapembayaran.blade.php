@@ -35,7 +35,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <img src="{{ asset('img/bayarSPP-5.png') }}" class="main-logo" width="50" alt="Awesome Image" />
@@ -47,7 +47,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -63,20 +63,20 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
 
-                <a class="nav-link" href="profilesekolah1">
+                <a class="nav-link" href="/profil/profilesekolah1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="filterdatasiswa">
+                <a class="nav-link" href="/datas/filterdatasiswa">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Siswa</span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link active" href="filterdatapembayaran">
+                <a class="nav-link active" href="/pembayaran/filterdatapembayaran">
                     <i class="fas fa-fw fa-cash-register"></i>
                     <span>Data Pembayaran</span></a>
               </li>
@@ -91,16 +91,16 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pembayaran kelas:</h6>
                         <a class="collapse-item" href="/setting_pembayaran">setting</a>
-                        <a class="collapse-item" href="kelas_x">X</a>
-                        <a class="collapse-item" href="kelas_xi">XI</a>
-                        <a class="collapse-item" href="kelas_xii">XII</a>
+                        <a class="collapse-item" href="/settingg/kelas_x">X</a>
+                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                        <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="filterhistory">
+                <a class="nav-link" href="/history/filterhistory">
                     <i class="fas fa-fw fa-history"></i>
                     <span>History Pembayaran</span></a>
             </li>
@@ -171,14 +171,14 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">SMKN 8</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                                     <img class="img-profile rounded-circle"
                                         src="{{ asset('img/smk8.png') }}">
                                 </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profilesekolah1">
+                                <a class="dropdown-item" href="/profil/profilesekolah1">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -209,13 +209,14 @@
 
                         
                     <!-- Earnings (Monthly) Card Example -->
+                    <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                           Total Pembayaran (Bulan ini)</div>
+                                            Pemasukan Spp (Monthly)</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 3.800.000</div>
                                     </div>
                                     <div class="col-auto">
@@ -255,7 +256,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Total Pembayaran SPP (Tahun Ini)</div>
+                                            Pemasukan Spp (ANNUAL)</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 13.200.000</div>
                                     </div>
                                     <div class="col-auto">
@@ -295,8 +296,7 @@
                         </div>
                     </div>
 
-                </div>    
-                   
+                </div>
 
                 <!-- Begin Page Content -->
 
@@ -309,31 +309,31 @@
                         </div>
                         <div class="card-body">
                           <div class="form-group row">
-                              <label for="" class=" mt-2 mx-5">Kelas</label>
-							        <div class="col-sm-2">
-								        <select class="form-control" name="n">
-											<option  value="">Pilih Kelas</option>
+                                <label for="" class=" mt-2 mx-5">Kelas</label>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" name="n">
+                                            <option selected><?php echo "XI" ?></option>
                                             <option  value="">X</option>
                                             <option  value="">XI</option>
                                             <option  value="">XII</option>
-										</select>
-						  	        </div>
+                                        </select>
+                                    </div>
 
                                 <label for="" class=" mt-2 mx-5">Jurusan</label>
-							        <div class="col-sm-2">
-								        <select class="form-control" name="n">
-											<option  value="">Pilih Jurusan</option>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" name="n">
+                                            <option selected><?php echo "RPL" ?></option>
                                             <option  value="">RPL</option>
                                             <option  value="">TKJ</option>
                                             <option  value="">ELIN</option>
                                             <option  value="">MEKATRONIKA</option>
-										</select>
-						  	        </div>
+                                        </select>
+                                    </div>
                             
                                 <label for="" class=" mt-2 mx-5">Bulan</label>
 							        <div class="col-sm-2">
 								        <select class="form-control" name="n">
-                                            <option  value="">Pilih Bulan</option>
+                                            <option selected><?php echo "September" ?></option>
                                             <option  value="">Januari</option>
                                             <option  value="">Februari</option>
                                             <option  value="">Maret</option>
@@ -349,13 +349,65 @@
 									    </select>
 						  	        </div>
 
-                                    <a href="datapembayaran" class="btn btn-primary btn-icon-split mx-4">
+                                    <a href="#" class="btn btn-primary btn-icon-split mx-4">
                                         <span class="icon text-white-30">
                                         <i class="fas fa-search"></i>
                                         </span>
                                         <span class="text">Cari</span>
                                     </a>
                         </div>
+                        </div>
+                    </div>
+
+                    <!-- DataTales Tables -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Data Pembayaran SPP</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="text-center thead-light">
+                                        <tr>
+                                            <th scope="col">Nama Siswa</th>
+                                            <th scope="col">NISN</th>
+                                            <th scope="col">Kelas & Jurusan</th>
+                                            <th scope="col">Bulan Bayar</th>
+                                            <th scope="col">Tanggal Pembayaran</th>
+                                            <th scope="col">Jumlah Bayar</th>
+                                            <th scope="col">Sisa Tagihan</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    @foreach($data as $row)                                   
+
+                                        <tr>
+                                            <td class="text-center">{{ $row->nama }}</td>
+                                            <td class="text-center">{{ $row->nisn }}</td>
+                                            <td class="text-center">{{ $row->kelas_jurusan }}</td>
+                                            <td class="text-center">{{ $row->bulan_bayar }}</td>
+                                            <th class="text-center">12-09-2020</th>
+                                            <td class="text-center">{{ $row->jumlah_bayar }}</td>
+                                            <td class="text-center">{{ $row->sisa_tagihan }}</td>
+                                            <td class="text-success text-center"><b>Lunas</b></td>
+                                            <td class="text-center">
+                                                
+                                                <a href="/pembayaran/editdatapembayaran1" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+
+                                                <a href="/deletedata/{{ $row->id }}" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" ><i class="fa fa-trash-alt"></i></a>
+                              
+
+                                            </td>
+                                        </tr>  
+                                   
+                                    @endforeach
+
+                                    </tbody>
+                                    </table>
+                            </div>
                         </div>
                     </div>
 

@@ -11,13 +11,13 @@ class DataController extends Controller
     public function datasiswa(){
 
         $data = data::all();
-        return view('Admin.datasiswa.datasiswa',compact('data'));
+        return view('admin.datas.datasiswa',compact('data'));
     }
 
     public function tampildatasiswa($id){
 
         $data = data::find($id);
-        return view('Admin.datasiswa.editsiswa',compact('data'));
+        return view('admin.datas.editsiswa',compact('data'));
     }
 
     public function updatedata(Request $request, $id){

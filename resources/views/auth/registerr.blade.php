@@ -39,61 +39,67 @@
                     <div class="text-center">
                         <img src="img/bayarSPP-5.png" class="main-logo" width="80" alt="Awesome Image" />
                         <div class="p-5">
-                            <div class="text-center">
+                        <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun Baru!</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" action="/registerr" method="post">
+                                @csrf 
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Nama Sekolah">
+                                    <input type="text" name="name" class="form-control form-control-user @error('name') is-invalid @enderror" id="name"
+                                        placeholder="Nama Sekolah" required value="{{ old('name') }}">
+                                    @error('name')
+                                    <div class="invalid-feedback text-left">
+                                    {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Sekolah">
+                                    <input type="email" name="email" class="form-control form-control-user @error('email') is-invalid @enderror" id="email"
+                                        placeholder="Email Sekolah" required value="{{ old('email') }}">
+                                    @error('email')
+                                    <div class="invalid-feedback text-left">
+                                    {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="alamat" class="form-control form-control-user @error('alamat') is-invalid @enderror" id="alamat"
+                                        placeholder="Alamat" required value="{{ old('alamat') }}">
+                                    @error('alamat')
+                                    <div class="invalid-feedback text-left">
+                                    {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="number" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="No Telepon Sekolah">
+                                        <input type="password" name="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password"
+                                            placeholder="Password" required>
+                                        @error('password')
+                                        <div class="invalid-feedback text-left">
+                                        {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Alamat">
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="nama pengguna">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="email pengguna">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Konfirmasi password">
+                                        <input type="password" name="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password"
+                                            placeholder="Konfirmasi password" required>
                                     </div>
                                 </div>
 
                                 <br>
                                 
-                                <a href="/admin" class="btn btn-primary btn-user btn-block">
+                                <button class="btn btn-primary btn-user btn-block" type="submit">
                                     Registrasi
-                                </a>
-                                
+                                </button>
+
+                            </form>
                             <hr>
                             <div class="text-center">
                                 <a class="small" href="/forgot-passwordd">Lupa Kata Sandi?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="/loginn">Sudah Punya Akun? Login!!</a>
+                                <a class="small" href="/login">Sudah Punya Akun? Login!!</a>
                             </div>
                         </div>
                     </div>

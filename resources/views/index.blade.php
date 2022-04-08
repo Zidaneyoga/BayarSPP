@@ -46,6 +46,10 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="main-navigation">
                         <ul class=" one-page-scroll-menu navigation-box">
+                            <li>
+                            <li>
+                            <li>
+                            <li>
                             <li class="current scrollToLink">
                                 <a href="#banner">Beranda</a>
                             </li>
@@ -61,15 +65,32 @@
                                 <ul class="sub-menu">
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            
+    
+                            <li>
+                            <li>
+                            <li>
+                            @auth
+                            <li class="dropdown">
+                                <a class="dropdown" role="button">
+                                    Welcome back, {{ auth()->user()->name }}
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                                    <li>
+                                        <form action="/logout" method="post">
+                                            @csrf
+                                            <button type="submit" class="dropdown">Logout</button>
+                                    </li>
+                            @else
                             <li class="dropdown">
                                 <a href="#">Login</a>
                                 <ul class="sub-menu">
                                     <li><a href="/login">Login User</a></li>
-                                    <li><a href="/loginn">Login Admin</a></li>
-                                    
-                                </ul><!-- /.sub-menu -->
+                                    <li><a href="/login">Login Admin</a></li>
+                            </ul><!-- /.sub-menu -->
                             </li>
+                            @endauth
+                                    
                             
                         </ul>
               
@@ -95,7 +116,7 @@
                             <p class="banner-one__text">Pembayaran SPP dengan mudah dan cepat.
                                 <br> Pastinya aman dan nyaman tanpa datang ke sekolah <br> mudah dan praktis dengan sekali klik.</p>
                             <!-- /.banner-one__text -->
-                            <a href="/register" class="banner-one__btn thm-btn ">REGISTER</a><!-- /.thm-btn -->
+                            <a href="/registerr" class="banner-one__btn thm-btn ">REGISTER</a><!-- /.thm-btn -->
                         </div><!-- /.banner-one__content -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
@@ -179,7 +200,7 @@
                                         melalui DANA, OVO, atau E-Banking.</p>
                                 </li>
                             </ul><!-- /.list-unstyled -->
-                            <a href="/register" class="thm-btn cta-two__btn">Daftar Segera!</a><!-- /.thm-btn -->
+                            <a href="/registerr" class="thm-btn cta-two__btn">Daftar Segera!</a><!-- /.thm-btn -->
                         </div><!-- /.cta-two__content -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->

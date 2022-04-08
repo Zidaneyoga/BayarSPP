@@ -32,7 +32,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
              <!-- Sidebar - Brand -->
-             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <img src="{{ asset('img/bayarSPP-5.png') }}" class="main-logo" width="50" alt="Awesome Image" />
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -59,20 +59,20 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="profilesekolah1">
+                <a class="nav-link" href="/profil/profilesekolah1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="filterdatasiswa">
+                <a class="nav-link" href="/datas/filterdatasiswa">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Siswa</span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link active" href="filterdatapembayaran">
+                <a class="nav-link active" href="/pembayaran/filterdatapembayaran">
                     <i class="fas fa-fw fa-cash-register"></i>
                     <span>Data Pembayaran</span></a>
               </li>
@@ -87,16 +87,16 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pembayaran kelas:</h6>
                         <a class="collapse-item" href="/setting_pembayaran">setting</a>
-                        <a class="collapse-item" href="kelas_x">X</a>
-                        <a class="collapse-item" href="kelas_xi">XI</a>
-                        <a class="collapse-item" href="kelas_xii">XII</a>
+                        <a class="collapse-item" href="/settingg/kelas_x">X</a>
+                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                        <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="filterhistory">
+                <a class="nav-link" href="/history/filterhistory">
                     <i class="fas fa-fw fa-history"></i>
                     <span>History Pembayaran</span></a>
             </li>
@@ -164,14 +164,14 @@
                        <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">SMKN 8</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                             <img class="img-profile rounded-circle"
                                 src="{{ asset('img/smk8.png') }}">
                         </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profilesekolah1">
+                                <a class="dropdown-item" href="/profil/profilesekolah1">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -270,7 +270,7 @@
                               </div>
                               @csrf
                               
-                              <a href="datapembayaran" class="btn btn-danger">Kembali</a>
+                              <a href="/pembayaran/datapembayaran" class="btn btn-danger">Kembali</a>
                               <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>
       

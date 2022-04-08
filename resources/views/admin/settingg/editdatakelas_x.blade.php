@@ -32,7 +32,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
              <!-- Sidebar - Brand -->
-             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <img src="{{ asset('img/bayarSPP-5.png') }}" class="main-logo" width="50" alt="Awesome Image" />
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -58,45 +58,48 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link active" href="profilesekolah1">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>My Profile</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="filterdatasiswa">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Siswa</span></a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="filterdatapembayaran">
-                    <i class="fas fa-fw fa-cash-register"></i>
-                    <span>Data Pembayaran</span></a>
-              </li>
+            <a class="nav-link" href="/profil/profilesekolah1">
+                <i class="fas fa-fw fa-user"></i>
+                <span>My Profile</span></a>
+        </li>
 
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Setting Pembayaran</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/datas/filterdatasiswa">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Data Siswa</span></a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="/pembayaran/filterdatapembayaran">
+                <i class="fas fa-fw fa-cash-register"></i>
+                <span>Data Pembayaran</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Setting Pembayaran</span>
+            </a>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Pembayaran kelas:</h6>
-                        <a class="collapse-item" href="/setting_pembayaran">setting</a>
-                        <a class="collapse-item" href="kelas_x">X</a>
-                        <a class="collapse-item" href="kelas_xi">XI</a>
-                        <a class="collapse-item" href="kelas_xii">XII</a>
+                        <h6 class="collapse-header">Data Pembayaran :</h6>
+                        <a class="collapse-item active" href="/settingg/kelas_x">X</a>
+                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                        <a class="collapse-item" href="settingg/kelas_xii">XII</a>
                     </div>
-                </div>
-            </li>
+            </div>
+        </li>
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="filterhistory">
+                <a class="nav-link" href="/history/filterhistory">
                     <i class="fas fa-fw fa-history"></i>
                     <span>History Pembayaran</span></a>
             </li>
@@ -128,9 +131,7 @@
 
                     <!-- Topbar Search -->
                     <form
-                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <br>
-                    <p>EDIT PAYMENT</p> 
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">      
                     </form>
 
                     <!-- Topbar Navbar -->
@@ -164,14 +165,14 @@
                        <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">SMKN 8</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                             <img class="img-profile rounded-circle"
                                 src="{{ asset('img/smk8.png') }}">
                         </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profilesekolah1">
+                                <a class="dropdown-item" href="/profil/profilesekolah1">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -211,30 +212,32 @@
                               <!-- Page Heading -->
                               <div class="card shadow mb-4">
                                   <div class="card-header py-3">
-                                      <h6 class="m-0 font-weight-bold text-primary">Edit Profile</h6>
+                                      <h6 class="m-0 font-weight-bold text-primary">Edit Data</h6>
                                   </div>
                                   <div class="card-body">
       
-                                  <form action="/updateprofilesekolah/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                                  <form action="/updatekelas_x/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                               <div class="form-group">
-                                    <label for="name">Nama Sekolah</label>
-                                    <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Sekolah" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nama }}">
+                                    <label for="name">Nama Siswa</label>
+                                    <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Siswa" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nama }}">
                               </div>      
                               <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input type="number" name="nisn" class="form-control" placeholder="Masukkan Email Sekolah" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->notelepon }}">
+                                <label for="exampleInputEmail1" class="form-label">NISN</label>
+                                <input type="number" name="nisn" class="form-control" placeholder="Masukkan NISN Siswa" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nisn }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Kelas / Jurusan</label>
+                                <select class="form-control" name="jurusan">
+                                  <option selected>{{ $data->jurusan }}</option>
+                                  <option value="RPL">Rekayasa Perangkat Lunak</option>
+                                  <option value="TKJ">Teknik Komputer Jaringan</option>
+                                  <option value="ELIN">Elektronika Industri</option>
+                                  <option value="MEKATRONIKA">Mekanika, Elektronika, Informatika</option>
+                                </select>
                               </div>
                               @csrf
-                              <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Pilih Foto</label>
-                                <div class="col-md-">
-                                  <img src="{{ asset('fotosiswa/'.$data->foto) }}" width="100"> <br/>
-                                  <div class="mt-3">
-                                    <input type="file" name="foto" class="form-control">
-                                  </div>  
-                                </div>  
-                              </div>
-                              <a href="profilesekolah1" class="btn btn-danger">Kembali</a>
+                              
+                              <a href="/settingg/kelas_x" class="btn btn-danger">Kembali</a>
                               <button type="submit" class="btn btn-primary">Kirim</button>
                             </form>
       

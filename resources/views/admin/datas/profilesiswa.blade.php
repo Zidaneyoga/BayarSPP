@@ -31,8 +31,8 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-             <!-- Sidebar - Brand -->
-             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <img src="{{ asset('img/bayarSPP-5.png') }}" class="main-logo" width="50" alt="Awesome Image" />
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -60,46 +60,44 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
 
-            <a class="nav-link" href="profilesekolah1">
-                <i class="fas fa-fw fa-user"></i>
-                <span>My Profile</span></a>
-        </li>
+                <a class="nav-link" href="/profil/profilesekolah1">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>My Profile</span></a>
+            </li>
 
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link active" href="/datas/filterdatasiswa">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Siswa</span></a>
+            </li>
 
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="filterdatasiswa">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Data Siswa</span></a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pembayaran/filterdatapembayaran">
+                    <i class="fas fa-fw fa-cash-register"></i>
+                    <span>Data Pembayaran</span></a>
+              </li>
 
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="filterdatapembayaran">
-                <i class="fas fa-fw fa-cash-register"></i>
-                <span>Data Pembayaran</span></a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Setting Pembayaran</span>
-            </a>
-            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar">
+              <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Setting Pembayaran</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Pembayaran :</h6>
-                        <a class="collapse-item active" href="kelas_x">X</a>
-                        <a class="collapse-item" href="kelas_xi">XI</a>
-                        <a class="collapse-item" href="kelas_xii">XII</a>
+                        <h6 class="collapse-header">Pembayaran kelas:</h6>
+                        <a class="collapse-item" href="/setting_pembayaran">setting</a>
+                        <a class="collapse-item" href="/settingg/kelas_x">X</a>
+                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                        <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
                     </div>
-            </div>
-        </li>
+                </div>
+            </li>
 
             <!-- Nav Item - History -->
             <li class="nav-item">
-                <a class="nav-link" href="filterhistory">
+                <a class="nav-link" href="/history/filterhistory">
                     <i class="fas fa-fw fa-history"></i>
                     <span>History Pembayaran</span></a>
             </li>
@@ -118,6 +116,9 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
             <!-- Main Content -->
             <div id="content">
 
@@ -131,9 +132,10 @@
 
                     <!-- Topbar Search -->
                     <form
-                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">      
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <br>
+                    <p>PROFILE STUDENT</p> 
                     </form>
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -161,23 +163,23 @@
                             </div>
                         </li>
 
-                       <!-- Nav Item - User Information -->
-                       <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">SMKN 8</span>
-                            <img class="img-profile rounded-circle"
-                                src="{{ asset('img/smk8.png') }}">
-                        </a>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
+                                <img class="img-profile rounded-circle"
+                                    src="{{ asset('img/smk8.png') }}">
+                            </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profilesekolah1">
+                                <a class="dropdown-item" href="/profil/profilesekolah1">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Ganti Kata Sandi
                                 </a>
                                 <a class="dropdown-item" href="#">
@@ -198,50 +200,84 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="row justify-content-center">
+                <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="col-xl-8 col-lg-10 col-md-9">
+                    <!-- Content Row -->
             
-                
 
-            
-                          
-                          <div class="container-fluid">
-      
-                              <!-- Page Heading -->
-                              <div class="card shadow mb-4">
-                                  <div class="card-header py-3">
-                                      <h6 class="m-0 font-weight-bold text-primary">Edit Data</h6>
-                                  </div>
-                                  <div class="card-body">
-      
-                                  <form action="/updatekelas_x/{{ $data->id }}" method="POST" enctype="multipart/form-data">
-                              <div class="form-group">
-                                    <label for="name">Nama Siswa</label>
-                                    <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Siswa" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nama }}">
-                              </div>      
-                              <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">NISN</label>
-                                <input type="number" name="nisn" class="form-control" placeholder="Masukkan NISN Siswa" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nisn }}">
-                              </div>
-                              <div class="form-group">
-                                <label>Kelas / Jurusan</label>
-                                <select class="form-control" name="jurusan">
-                                  <option selected>{{ $data->jurusan }}</option>
-                                  <option value="RPL">Rekayasa Perangkat Lunak</option>
-                                  <option value="TKJ">Teknik Komputer Jaringan</option>
-                                  <option value="ELIN">Elektronika Industri</option>
-                                  <option value="MEKATRONIKA">Mekanika, Elektronika, Informatika</option>
-                                </select>
-                              </div>
-                              @csrf
-                              
-                              <a href="kelas_x" class="btn btn-danger">Kembali</a>
-                              <button type="submit" class="btn btn-primary">Kirim</button>
-                            </form>
-      
+
+                <center><div class="col-lg-7 mb-4">
+
+
+                    <!-- Content Row -->
+        
+
+                    <!-- Illustrations -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary"><left>Profil Siswa</left></h6>
                         </div>
+                        <div class="card-body">
+                        <center><div class="col-md-">
+                        <img src="{{ asset('fotosiswa/'.$data->foto) }}" class="img-profile rounded-circle" width="200" height="200">
+						</div><center>
+								<div class="col-md- mt-4">
+									<table class="table table-hover">
+										<tbody>
+                                            <tr>
+												<td>NISN</td>
+												<td>:</td>
+												<td>{{ $data->nisn }}</td>
+											</tr>
+											<tr>
+												<td>Nama</td>
+												<td>:</td>
+                                                 <td>{{ $data->nama }}</td>
+											</tr>
+											<tr>
+												<td>Jenis Kelamin</td>
+												<td>:</td>
+												<td>{{ $data->jenis_kelamin }}</td>
+											</tr>
+											<tr>
+												<td>Jurusan</td>
+												<td>:</td>
+												<td>{{ $data->jurusan }}</td>
+											</tr>
+                                            <tr>
+												<td>No Telepon</td>
+												<td>:</td>
+												<td>0{{ $data->notelepon }}</td>
+											</tr>
+											<tr>
+												<td>Alamat</td>
+												<td>:</td>
+												<td>{{ $data->alamat }}</td>
+											</tr>
+									    </tbody>
+									</table>
+								</div>
+								<div class="form-group text-left">
+                        <left>
+                       
+                         <a href="/datas/datasiswa" class="btn btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                            <span class="text">Kembali</span>
+                        </a>
+                        </left>
+                     </div>
+
+
+                        </div>
+
+                </div><center>
+                
+                </div>
+            
+                </left>
+                <div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -289,7 +325,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -299,6 +335,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
 
 </body>
 
