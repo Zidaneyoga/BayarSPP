@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard1">
+                <a class="nav-link" href="/user/dashboard1">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -59,26 +59,26 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="profilesiswa1">
+                <a class="nav-link" href="/user/profil/profilesiswa1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link active" href="profilesekolah1">
+                <a class="nav-link active" href="/user/profil/profilesekolah1">
                     <i class="fas fa-fw fa-school"></i>
                     <span>Profil Sekolah</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tagihanpembayaran1">
+                <a class="nav-link" href="/user/bayar/tagihanpembayaran1">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="laporanpembayaran1">
+                <a class="nav-link" href="/user/laporan/laporanpembayaran1">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Laporan Pembayaran</span></a>
             </li>
@@ -206,22 +206,22 @@
 											<tr>
 												<td>Nama Sekolah</td>
 												<td>:</td>
-												<td>SMKN 8 Malang</td>
+												<td>{{ auth()->user()->name }}</td>
 											</tr>
 											<tr>
 												<td>Email</td>
 												<td>:</td>
-												<td>asta@smkn8malang.sch.id</td>
+												<td>{{ auth()->user()->email }}</td>
 											</tr>
                                             <tr>
 												<td>NPSN</td>
 												<td>:</td>
-												<td>20539750</td>
+												<td>{{ auth()->user()->npsn }}</td>
 											</tr>
                                             <tr>
 												<td>Alamat</td>
 												<td>:</td>
-												<td>JL. Teluk Pacitan, Malang</td>
+												<td>{{ auth()->user()->alamat }}</td>
 											</tr>
 									    </tbody>
 									</table>

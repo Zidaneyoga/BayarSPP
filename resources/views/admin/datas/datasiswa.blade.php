@@ -270,7 +270,6 @@
                                             <th class="text-center">Nama Siswa</th>
                                             <th class="text-center">Jenis Kelamin</th>
                                             <th class="text-center">Jurusan</th>
-                                            <th class="text-center">No Telepon</th>
                                             <th class="text-center">Alamat</th>
                                             <th class="text-center">Aksi</th>
                                         </tr>
@@ -291,7 +290,6 @@
                                             <td class="text-center">{{ $row->nama }}</td>
                                             <td class="text-center">{{ $row->jenis_kelamin }}</td>
                                             <td class="text-center">{{ $row->jurusan }}</td>
-                                            <td class="text-center">0{{ $row->notelepon }}</td>
                                             <td class="text-center">{{ $row->alamat }}</td>
                                             <td class="text-center">
                                           

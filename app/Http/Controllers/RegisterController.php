@@ -38,4 +38,34 @@ class RegisterController extends Controller
 
         return redirect('/login');
     }
+
+    public function profilesekolah($id){
+        
+        $data= User::find($id);
+        return view('admin.profil.profilesekolah', compact('data'));
+    }
+
+    public function editprofilesekolah($id){
+        
+        $data= User::find($id);
+        return view('admin.profil.editprofilesekolah', compact('data'));
+    }
+
+    public function updateprofilesekolah(Request $request, $id){
+        $data= User::find($id);
+        $data->update($request->all());
+        if($request->hasFile('foto')){
+            $request->file('foto')->move('fotosiswa/',$request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->update();
+        }
+        return redirect('/profil/profilesekolah1')->with('success','Data Berhasil Di Update');
+    }
+
+    public function profilesekolahuser($id){
+        
+        $data= User::find($id);
+        return view('user.profil_sekolah.profilesekolah', compact('data'));
+    }
+
 }

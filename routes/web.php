@@ -37,22 +37,22 @@ Route::get('/register',[RegisterController::class, 'register'])->name('register'
 
 // profile admin
 
-Route::get('/profil/profilesekolah{id}',[EmployeeController::class, 'profilesekolah'])->name('profilesekolah');
-Route::post('/updateprofilesekolah/{id}',[EmployeeController::class, 'updateprofilesekolah'])->name('updateprofilesekolah');
-Route::get('/profil/editprofilesekolah{id}',[EmployeeController::class, 'editprofilesekolah'])->name('editprofilesekolah');
+Route::get('/profil/profilesekolah{id}',[RegisterController::class, 'profilesekolah'])->name('profilesekolah')->middleware('auth');
+Route::post('/updateprofilesekolah/{id}',[RegisterController::class, 'updateprofilesekolah'])->name('updateprofilesekolah')->middleware('auth');
+Route::get('/profil/editprofilesekolah{id}',[RegisterController::class, 'editprofilesekolah'])->name('editprofilesekolah')->middleware('auth');
 
 Route::get('/admin/dashboard',[DashboardController::class, 'admin'])->name('admin')->middleware('auth');
 
 
 // data siswa admin
 
-Route::get('/datas/datasiswa',[EmployeeController::class, 'index'])->name('datasiswa');
-Route::get('/tambahdata',[EmployeeController::class, 'tambahdata'])->name('tambahdata');
-Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('insertdata');
-Route::get('/datas/tampildata{id}',[EmployeeController::class, 'tampildata'])->name('tampildata');
-Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name('updatedata');
-Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
-Route::get('/datas/profilesiswa{id}',[EmployeeController::class, 'profilesiswa'])->name('profilesiswa');
+Route::get('/datas/datasiswa',[EmployeeController::class, 'index'])->name('datasiswa')->middleware('auth');
+Route::get('/tambahdata',[EmployeeController::class, 'tambahdata'])->name('tambahdata')->middleware('auth');
+Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('insertdata')->middleware('auth');
+Route::get('/datas/tampildata{id}',[EmployeeController::class, 'tampildata'])->name('tampildata')->middleware('auth');
+Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name('updatedata')->middleware('auth');
+Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete')->middleware('auth');
+Route::get('/datas/profilesiswa{id}',[EmployeeController::class, 'profilesiswa'])->name('profilesiswa')->middleware('auth');
 
 Route::get('/datas/filterdatasiswa', function () {
     return view('admin.datas.filterdatasiswa');
@@ -120,7 +120,7 @@ Route::get('user/dashboard{id}',[EmployeeController::class, 'dashboard'])->name(
 Route::get('user/profil/profilesiswa{id}',[EmployeeController::class, 'profileuser'])->name('profilesiswa');
 Route::get('user/profil/editprofilesiswa{id}',[EmployeeController::class, 'editprofilesiswa'])->name('editprofilesiswa');
 Route::post('/updateprofilesiswa/{id}',[EmployeeController::class, 'updateprofilesiswa'])->name('updateprofilesiswa');
-Route::get('user/profil/profilesekolah{id}',[EmployeeController::class, 'profilesekolahuser'])->name('profilesekolah');
+Route::get('user/profil/profilesekolah{id}',[RegisterController::class, 'profilesekolahuser'])->name('profilesekolah')->middleware('auth');
 
 
 // tagihan pembayaran user

@@ -47,7 +47,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard1">
+                <a class="nav-link" href="/user/dashboard1">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -62,26 +62,26 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="profilesiswa1">
+                <a class="nav-link" href="/user/profil/profilesiswa1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="profilesekolah1">
+                <a class="nav-link" href="/user/profil/profilesekolah1">
                     <i class="fas fa-fw fa-school"></i>
                     <span>Profil Sekolah</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link active" href="tagihanpembayaran1">
+                <a class="nav-link active" href="/user/bayar/tagihanpembayaran1">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="laporanpembayaran1">
+                <a class="nav-link" href="/user/laporan/laporanpembayaran1">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Laporan Pembayaran</span></a>
             </li>

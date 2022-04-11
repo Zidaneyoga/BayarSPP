@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard1">
+                <a class="nav-link" href="/user/dashboard1">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -59,26 +59,26 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link active" href="profilesiswa1">
+                <a class="nav-link active" href="/user/profil/profilesiswa1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="profilesekolah1">
+                <a class="nav-link" href="/user/profil/profilesekolah1">
                     <i class="fas fa-fw fa-school"></i>
                     <span>Profil Sekolah</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tagihanpembayaran1">
+                <a class="nav-link" href="/user/bayar/tagihanpembayaran1">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="laporanpembayaran1">
+                <a class="nav-link" href="/user/laporan/laporanpembayaran1">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Laporan Pembayaran</span></a>
             </li>
@@ -218,15 +218,19 @@
                                 <label>Kelas / Jurusan</label>
                                 <select class="form-control" name="jurusan">
                                   <option selected>{{ $data->jurusan }}</option>
-                                  <option value="RPL">Rekayasa Perangkat Lunak</option>
-                                  <option value="TKJ">Teknik Komputer Jaringan</option>
-                                  <option value="ELIN">Elektronika Industri</option>
-                                  <option value="MEKATRONIKA">Mekanika, Elektronika, Informatika</option>
+                                  <option>X RPL</option>
+                                  <option>X TKJ</option>
+                                  <option>X ELIN</option>
+                                  <option>X MEKATRONIKA</option>
+                                  <option>XI RPL</option>
+                                  <option>XI TKJ</option>
+                                  <option>XI ELIN</option>
+                                  <option>XI MEKATRONIKA</option>
+                                  <option>XII RPL</option>
+                                  <option>XII TKJ</option>
+                                  <option>XII ELIN</option>
+                                  <option>XII MEKATRONIKA</option>
                                 </select>
-                              </div>
-                              <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">No Telepon</label>
-                                <input type="number" name="notelepon" class="form-control" placeholder="Masukkan No Telepon Siswa" id="exampleInputEmail1" aria-describedby="emailHelp" value="0{{ $data->notelepon }}">
                               </div>
                               <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Alamat</label>

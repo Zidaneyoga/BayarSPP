@@ -261,18 +261,13 @@
                               <td>{{ $data->jurusan }}</td>
                             </tr>
                             <tr>
-                              <td>No Telepon</td>
-                              <td>:</td>
-                              <td>0{{ $data->notelepon }}</td>
-                            </tr>
-                            <tr>
                               <td>Alamat</td>
                               <td>:</td>
                               <td>{{ $data->alamat }}</td>
                             </tr>
                                 <div class="float-right mr-4">
                            
-                                    <img src="{{ asset('img/user.png') }}" class="img-thumbnail mt-4" height="550">
+                                    <img src="{{ asset('fotosiswa/'.$data->foto) }}" class="img-thumbnail mt-4" height="225" width="225">
                                 </div>
                             </table>
                     </div>

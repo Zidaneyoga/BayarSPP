@@ -237,15 +237,19 @@
                                 <label>Kelas / Jurusan</label>
                                 <select class="form-control" name="jurusan">
                                   <option selected>{{ $data->jurusan }}</option>
-                                  <option value="RPL">Rekayasa Perangkat Lunak</option>
-                                  <option value="TKJ">Teknik Komputer Jaringan</option>
-                                  <option value="ELIN">Elektronika Industri</option>
-                                  <option value="MEKATRONIKA">Mekanika, Elektronika, Informatika</option>
+                                  <option>X RPL</option>
+                                  <option>X TKJ</option>
+                                  <option>X ELIN</option>
+                                  <option>X MEKATRONIKA</option>
+                                  <option>XI RPL</option>
+                                  <option>XI TKJ</option>
+                                  <option>XI ELIN</option>
+                                  <option>XI MEKATRONIKA</option>
+                                  <option>XII RPL</option>
+                                  <option>XII TKJ</option>
+                                  <option>XII ELIN</option>
+                                  <option>XII MEKATRONIKA</option>
                                 </select>
-                              </div>
-                              <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">No Telepon</label>
-                                <input type="number" name="notelepon" class="form-control" placeholder="Masukkan No Telepon Siswa" id="exampleInputEmail1" aria-describedby="emailHelp" value="0{{ $data->notelepon }}">
                               </div>
                               <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Alamat</label>

@@ -220,7 +220,7 @@
                         </div>
                         <div class="card-body">
                         <center><div class="col-md-">
-							<img src="{{ asset('fotosiswa/'.$data->foto) }}" width="100" height="100" class="img-profile rounded-circle" >
+							<img src="{{ asset('fotosiswa/'.auth()->user()->foto) }}" width="100" height="100" class="img-profile" >
 						</div><center>
 								<div class="col-md- mt-4">
 									<table class="table table-hover">
@@ -228,12 +228,12 @@
                         <tr>
                           <td>Nama Sekolah</td>
                           <td>:</td>
-                          <td>{{ $data->nama }}</td>
+                          <td>{{ auth()->user()->name }}</td>
                         </tr>
                         <tr>
                           <td>Email</td>
                           <td>:</td>
-                          <td>{{ $data->nisn }}</td>
+                          <td>{{ auth()->user()->email }}</td>
                         </tr>
 									    </tbody>
 									</table>

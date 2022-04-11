@@ -244,11 +244,6 @@
 												<td>:</td>
 												<td>{{ $data->jurusan }}</td>
 											</tr>
-                                            <tr>
-												<td>No Telepon</td>
-												<td>:</td>
-												<td>0{{ $data->notelepon }}</td>
-											</tr>
 											<tr>
 												<td>Alamat</td>
 												<td>:</td>

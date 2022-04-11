@@ -68,30 +68,6 @@ class EmployeeController extends Controller
         $data= Employee::find($id);
         return view('admin.history.historypembayaran', compact('data'));
     }
-
-    public function profilesekolah($id){
-        
-        $data= Employee::find($id);
-        return view('admin.profil.profilesekolah', compact('data'));
-    }
-
-    public function editprofilesekolah($id){
-        
-        $data= Employee::find($id);
-        return view('admin.profil.editprofilesekolah', compact('data'));
-    }
-
-    public function updateprofilesekolah(Request $request, $id){
-        $data= Employee::find($id);
-        $data->update($request->all());
-        if($request->hasFile('foto')){
-            $request->file('foto')->move('fotosiswa/',$request->file('foto')->getClientOriginalName());
-            $data->foto = $request->file('foto')->getClientOriginalName();
-            $data->update();
-        }
-        return redirect('admin/profil/profilesekolah1')->with('success','Data Berhasil Di Update');
-    }
-
     
     public function kelas_x(){
 
@@ -192,12 +168,6 @@ class EmployeeController extends Controller
         
         $data= Employee::find($id);
         return view('user.dashboard', compact('data'));
-    }
-
-    public function profilesekolahuser($id){
-        
-        $data= Employee::find($id);
-        return view('user.profil_sekolah.profilesekolah', compact('data'));
     }
 
     public function tagihanpembayaran($id){

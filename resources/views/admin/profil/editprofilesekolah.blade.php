@@ -218,17 +218,17 @@
                                   <form action="/updateprofilesekolah/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                               <div class="form-group">
                                     <label for="name">Nama Sekolah</label>
-                                    <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Sekolah" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nama }}">
+                                    <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Sekolah" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{  auth()->user()->name }}">
                               </div>      
                               <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input type="number" name="nisn" class="form-control" placeholder="Masukkan Email Sekolah" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->notelepon }}">
+                                <input type="email" name="email" class="form-control" placeholder="Masukkan Email Sekolah" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{  auth()->user()->email }}">
                               </div>
                               @csrf
                               <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Pilih Foto</label>
                                 <div class="col-md-">
-                                  <img src="{{ asset('fotosiswa/'.$data->foto) }}" width="100"> <br/>
+                                  <img src="{{ asset('fotosiswa/'. auth()->user()->foto) }}" width="100"> <br/>
                                   <div class="mt-3">
                                     <input type="file" name="foto" class="form-control">
                                   </div>  
