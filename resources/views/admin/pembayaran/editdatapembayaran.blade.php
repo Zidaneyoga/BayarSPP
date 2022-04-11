@@ -225,21 +225,22 @@
                                 <input type="number" name="nisn" class="form-control" placeholder="Masukkan NISN Siswa" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nisn }}">
                               </div>
                               <div class="form-group">
-                                <label>Kelas / Jurusan</label>
-                                <select class="form-control" name="kelas_jurusan">
-                                  <option selected>{{ $data->kelas_jurusan }}</option>
-                                  <option>X RPL</option>
-                                  <option>X TKJ</option>
-                                  <option>X ELIN</option>
-                                  <option>X MEKATRONIKA</option>
-                                  <option>XI RPL</option>
-                                  <option>XI TKJ</option>
-                                  <option>XI ELIN</option>
-                                  <option>XI MEKATRONIKA</option>
-                                  <option>XII RPL</option>
-                                  <option>XII TKJ</option>
-                                  <option>XII ELIN</option>
-                                  <option>XII MEKATRONIKA</option>
+                                <label>Kelas</label>
+                                <select class="form-control" name="kelas">
+                                    <option selected>{{ $data->kelas }}</option>
+                                    <option value="X">X</option>
+                                    <option value="XI">XI</option>
+                                    <option value="XII">XII</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Jurusan</label>
+                                <select class="form-control" name="jurusan">
+                                  <option selected>{{ $data->jurusan }}</option>
+                                  <option>RPL</option>
+                                  <option>TKJ</option>
+                                  <option>ELIN</option>
+                                  <option>MEKATRONIKA</option>
                                 </select>
                               </div>
                               <div class="form-group">
@@ -264,10 +265,7 @@
                                     <label for="name">Jumlah Pembayaran</label>
                                     <input type="text" class="form-control" name="jumlah_bayar" placeholder="Masukkan Jumlah Pembayaran" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->jumlah_bayar }}">
                               </div>
-                              <div class="form-group">
-                                    <label for="name">Jumlah Tagihan</label>
-                                    <input type="text" class="form-control" name="sisa_tagihan" placeholder="Masukkan Jumlah Tagihan" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->sisa_tagihan }}">
-                              </div>
+                              
                               @csrf
                               
                               <a href="/pembayaran/datapembayaran" class="btn btn-danger">Kembali</a>

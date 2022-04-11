@@ -19,6 +19,7 @@ class CreateDataTable extends Migration
             $table->integer('nisn');
             $table->string('nama');
             $table->enum('jenis_kelamin',['Laki-Laki','Perempuan']);
+            $table->enum('kelas',['X','XI','XII']);
             $table->enum('jurusan',['RPL','TKJ','ELIN','MEKATRONIKA']);
             $table->bigInteger('notelepon');
             $table->string('alamat');

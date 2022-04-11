@@ -371,11 +371,11 @@
                                         <tr>
                                             <th scope="col">Nama Siswa</th>
                                             <th scope="col">NISN</th>
-                                            <th scope="col">Kelas & Jurusan</th>
+                                            <th scope="col">Kelas</th>
+                                            <th scope="col">Jurusan</th>
                                             <th scope="col">Bulan Bayar</th>
                                             <th scope="col">Tanggal Pembayaran</th>
                                             <th scope="col">Jumlah Bayar</th>
-                                            <th scope="col">Sisa Tagihan</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
@@ -387,11 +387,11 @@
                                         <tr>
                                             <td class="text-center">{{ $row->nama }}</td>
                                             <td class="text-center">{{ $row->nisn }}</td>
-                                            <td class="text-center">{{ $row->kelas_jurusan }}</td>
+                                            <td class="text-center">{{ $row->kelas }}</td>
+                                            <td class="text-center">{{ $row->jurusan }}</td>
                                             <td class="text-center">{{ $row->bulan_bayar }}</td>
                                             <th class="text-center">12-09-2020</th>
                                             <td class="text-center">{{ $row->jumlah_bayar }}</td>
-                                            <td class="text-center">{{ $row->sisa_tagihan }}</td>
                                             <td class="text-success text-center"><b>Lunas</b></td>
                                             <td class="text-center">
                                                 

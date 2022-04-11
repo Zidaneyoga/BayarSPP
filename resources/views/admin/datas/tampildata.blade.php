@@ -234,21 +234,22 @@
                                 </select>
                               </div>
                               <div class="form-group">
-                                <label>Kelas / Jurusan</label>
+                                <label>Kelas</label>
+                                <select class="form-control" name="kelas">
+                                  <option selected>{{ $data->kelas }}</option>
+                                  <option value="X">X</option>
+                                  <option value="XI">XI</option>
+                                  <option value="XII">XII</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Jurusan</label>
                                 <select class="form-control" name="jurusan">
                                   <option selected>{{ $data->jurusan }}</option>
-                                  <option>X RPL</option>
-                                  <option>X TKJ</option>
-                                  <option>X ELIN</option>
-                                  <option>X MEKATRONIKA</option>
-                                  <option>XI RPL</option>
-                                  <option>XI TKJ</option>
-                                  <option>XI ELIN</option>
-                                  <option>XI MEKATRONIKA</option>
-                                  <option>XII RPL</option>
-                                  <option>XII TKJ</option>
-                                  <option>XII ELIN</option>
-                                  <option>XII MEKATRONIKA</option>
+                                  <option>RPL</option>
+                                  <option>TKJ</option>
+                                  <option>ELIN</option>
+                                  <option>MEKATRONIKA</option>
                                 </select>
                               </div>
                               <div class="mb-3">
