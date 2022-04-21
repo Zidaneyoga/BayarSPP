@@ -36,7 +36,7 @@
 
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="text-center">
+                    <div class="text-center">                      
                         <img src="img/bayarSPP-5.png" class="main-logo" width="80" alt="Awesome Image" />
                         <div class="p-5">
                         <div class="text-center">

@@ -7,6 +7,7 @@ use App\Http\Controllers\DatabayarController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UpdatePasswordController;
 
 
 /*
@@ -40,6 +41,9 @@ Route::get('/register',[RegisterController::class, 'register'])->name('register'
 Route::get('/profil/profilesekolah{id}',[RegisterController::class, 'profilesekolah'])->name('profilesekolah')->middleware('auth');
 Route::post('/updateprofilesekolah/{id}',[RegisterController::class, 'updateprofilesekolah'])->name('updateprofilesekolah')->middleware('auth');
 Route::get('/profil/editprofilesekolah{id}',[RegisterController::class, 'editprofilesekolah'])->name('editprofilesekolah')->middleware('auth');
+
+Route::get('/editpassword',[UpdatePasswordController::class, 'edit'])->name('edit')->middleware('auth');
+Route::post('/editpassword',[UpdatePasswordController::class, 'update'])->name('update')->middleware('auth');
 
 Route::get('/admin/dashboard',[DashboardController::class, 'admin'])->name('admin')->middleware('auth');
 
