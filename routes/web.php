@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UpdatePasswordController;
+use App\Http\Controllers\SettingController;
 
 
 /*
@@ -33,7 +34,11 @@ Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
 Route::get('/registerr',[RegisterController::class, 'registerr'])->name('registerr')->middleware('guest');
 Route::post('/registerr',[RegisterController::class, 'store'])->name('registerr');
 
-Route::get('/register',[RegisterController::class, 'register'])->name('register');
+Route::get('/register',[RegisterController::class, 'register'])->name('register')->middleware('guest');
+Route::post('/register',[RegisterController::class, 'masuk'])->name('register');
+
+Route::get('/loginn',[LoginController::class, 'loginn'])->name('loginn')->middleware('guest');
+Route::post('/loginn',[LoginController::class, 'authen'])->name('loginn');
 
 
 // profile admin
@@ -73,6 +78,13 @@ Route::post('/updatedatapembayaran/{id}',[DataPembayaranController::class, 'upda
 Route::get('/pembayaran/filterdatapembayaran', function () {
     return view('admin.pembayaran.filterdatapembayaran');
 });
+
+// setting pembayaran
+
+Route::get('/settingg/settingpembayaran',[SettingController::class, 'setting'])->name('setting');
+Route::get('/settingg/editsetting{id}',[SettingController::class, 'editsetting'])->name('editsetting');
+Route::post('/updatesetting/{id}',[SettingController::class, 'updatesetting'])->name('updatesetting');
+Route::get('/delete/{id}',[SettingController::class, 'deletesetting'])->name('delete');
 
 
 // setting kelas X

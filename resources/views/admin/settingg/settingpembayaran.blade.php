@@ -211,20 +211,15 @@
 
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h5 class="m-0 font-weight-bold text-primary">Data Pembayaran SPP Kelas X</h5>
+                            <h5 class="m-0 font-weight-bold text-primary">Setting Nominal Pembayaran</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="text-center thead-light">
                                         <tr>
-                                            <th scope="col">Nama Siswa</th>
-                                            <th scope="col">NISN</th>
-                                            <th scope="col">Kelas</th>
-                                            <th scope="col">Bulan Bayar</th>
-                                            <th scope="col">Tanggal Pembayaran</th>
-                                            <th scope="col">Jumlah Bayar</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Tahun</th>
+                                            <th scope="col">Nominal</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
@@ -235,23 +230,19 @@
                                         
                                         
                                         <tr>
-                                            <td>{{ $row->nama }}</td>
-                                            <td class="text-center">{{ $row->nisn }}</td>
-                                            <td class="text-center">{{ $row->jurusan }}</td>
-                                            <td>September</td>
-                                            <th class="text-center">13-08-2020</th>
-                                            <td>Rp 100.000,00</td>
-                                            <td class="text-success text-center"><b>Lunas</b></td>
+                                            
+                                            <td class="text-center">{{ $row->tahun }}</td>
+                                            <td class="text-center">{{ $row->nominal }}</td>
                                             <td class="text-center">
                                                 
-                                            <a href="/settingg/editdatakelas_x1" class="btn btn-warning btn-icon-split mx-2">
+                                            <a href="/settingg/editsetting1" class="btn btn-warning btn-icon-split mx-2">
                                                     <span class="icon text-white-30">
                                                     <i class="fas fa-edit"></i>
                                                     </span>
                                                 <span class="text">edit</span>
                                                 </a>
                                                 
-                                                <a href="/settingg/kelas_x/delete/{{ $row->id }}" class="btn btn-danger btn-icon-split delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}" >
+                                                <a href="/settingg/settingpembayaran/delete/{{ $row->id }}" class="btn btn-danger btn-icon-split delete" data-id="{{ $row->id }}" data-tahun="{{ $row->tahun }}" >
                                                     <span class="icon text-white-30">
                                                     <i class="fas fa-trash"></i>
                                                     </span>

@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="32x32" href="img/bayarSPP-5.png">
 
-    <title>bayarSPP | ADMIN</title>
+    <title>bayarSPP</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,18 +39,42 @@
                             <div class="text-center">
                                 <img src="img/bayarSPP-5.png" class="main-logo" width="80" alt="Awesome Image" />
                                 <div class="p-5">
+                                    
+                                    @if(session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
+                                @if(session()->has('loginError'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ session('loginError') }}
+                                    </div>
+                                @endif
+
+                                    <main class="form-signin">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang Kembali!!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="/loginn" method="post">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Masukkan email anda">
+                                            <input type="email" name="email" class="form-control form-control-user @error('email') is-invalid @enderror" 
+                                                id="email" placeholder="Masukkan email anda" required value="{{ old('email') }}">
+                                        @error('email')
+                                        <div class="invalid-feedback text-left">
+                                        {{ $message }}
+                                        </div>
+                                        @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Kata sandi">
+                                            <input type="password" name="password" class="form-control form-control-user"
+                                                id="password" placeholder="Masukkan password" required>
+                                        @error('password')
+                                        <div class="invalid-feedback text-left">
+                                        {{ $message }}
+                                        </div>
+                                        @enderror
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -59,16 +83,16 @@
                                                     Saya</label>
                                             </div>
                                         </div>
-                                        <a href="/admin" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <button class="btn btn-primary btn-user btn-block" type="submit">
+                                        Login
+                                        </button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="/forgot-passwordd">Lupa Kata Sandi?</a>
+                                        <a class="small" href="/forgot-password">Lupa Kata Sandi?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="/registerr">Buat Akun Baru</a>
+                                        <a class="small" href="/register">Buat Akun Baru</a>
                                     </div>
                                 </div>
                             </div>

@@ -16,7 +16,11 @@ class CreateSekolahsTable extends Migration
         Schema::create('sekolahs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('foto')->nullable();
             $table->string('alamat');
+            $table->string('jenis_kelamin');
+            $table->integer('npsn');
+            $table->integer('nisn');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

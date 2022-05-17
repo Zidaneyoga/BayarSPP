@@ -89,7 +89,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pembayaran kelas:</h6>
-                        <a class="collapse-item" href="/setting_pembayaran">setting</a>
+                        <a class="collapse-item" href="/settingg/settingpembayaran">setting</a>
                         <a class="collapse-item" href="/settingg/kelas_x">X</a>
                         <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
                         <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
@@ -136,7 +136,7 @@
                 <form
                 class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <br>
-                <p>DASHBOARD</p> 
+                <p><b>DASHBOARD</b></p> 
                 </form>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -171,9 +171,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>{{ auth()->user()->name }}</b></span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('img/smk8.png') }}">
+                                src="{{ asset('fotosiswa/'.auth()->user()->foto) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -193,7 +193,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Portal
                                 </a>
                             </div>
                         </li>
@@ -207,8 +207,8 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="jumbotron">
-                        <h1 class="display-7">Haii, {{ Auth::user()->name }}</h1>
-                        <p class="lead">Ini adalah halaman admin.</p>
+                        <h1 class="display-7"><b>Haii, {{ Auth::user()->name }}<b></h1>
+                        <p class="lead"><em>Ini adalah halaman admin</em>.</p>
                     </div>
 
                     <!-- Content Row -->
@@ -258,27 +258,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Kode Registrasi</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?php
-                                                
-                                                function randomString($length)
-                                                {
-                                                    $str        = "";
-                                                    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
-                                                    $max        = strlen($characters) - 1;
-                                                    for ($i = 0; $i < $length; $i++) {
-                                                        $rand = mt_rand(0, $max);
-                                                        $str .= $characters[$rand];
-                                                    }
-                                                    return $str;
-                                                }
-
-                                                echo randomString(8); //hasil: U8YjlmXRFJ
-                                                echo "<br>";
-
-                                                ?>
-                                            </div>
+                                                NPSN</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ auth()->user()->npsn }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-address-card fa-2x text-gray-300"></i>
@@ -433,15 +414,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Yakin Ingin Keluar?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Ingin Ke Halaman Utama?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Tekan "Logout" jika ingin keluar dari admin dan pergi ke portal.</div>
+                <div class="modal-body">Tekan "Portal" jika ingin pergi ke halaman utama/portal.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../">Logout</a>
+                    <a class="btn btn-primary" href="../">Portal</a>
                 </div>
             </div>
         </div>

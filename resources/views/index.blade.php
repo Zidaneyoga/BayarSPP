@@ -85,7 +85,7 @@
                             <li class="dropdown">
                                 <a href="#">Login</a>
                                 <ul class="sub-menu">
-                                    <li><a href="/login">Login User</a></li>
+                                    <li><a href="/loginn">Login User</a></li>
                                     <li><a href="/login">Login Admin</a></li>
                             </ul><!-- /.sub-menu -->
                             </li>
@@ -116,7 +116,7 @@
                             <p class="banner-one__text">Pembayaran SPP dengan mudah dan cepat.
                                 <br> Pastinya aman dan nyaman tanpa datang ke sekolah <br> mudah dan praktis dengan sekali klik.</p>
                             <!-- /.banner-one__text -->
-                            <a href="/registerr" class="banner-one__btn thm-btn ">REGISTER</a><!-- /.thm-btn -->
+                            <a href="/register" class="banner-one__btn thm-btn ">REGISTER</a><!-- /.thm-btn -->
                         </div><!-- /.banner-one__content -->
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->

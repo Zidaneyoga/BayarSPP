@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('foto')->nullable();
             $table->string('alamat');
             $table->integer('npsn');
-            $table->string('kode')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

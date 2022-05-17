@@ -71,6 +71,7 @@
                                     </div>
                                     @enderror
                                 </div>
+                                
                                 <div class="form-group">
                                     <input type="number" name="npsn" class="form-control form-control-user @error('npsn') is-invalid @enderror" id="npsn"
                                         placeholder="NPSN" required value="{{ old('npsn') }}">

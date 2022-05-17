@@ -5,13 +5,40 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Sekolah;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    // public function register()
-    // {
-    //     return view('auth.register');
+    public function register()
+    {
+        return view('auth.register', [
+            'title' => 'Register',
+            'active' => 'register'
+        ]);
+    }
+
+    public function masuk(Request $request)
+    {
+        
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email:dns|unique:users',
+            'alamat' => 'required|max:255',
+            'jenis_kelamin' => 'required|max:255',
+            'npsn' => 'required|max:11',
+            'nisn' => 'required|max:11',
+            'password' => 'required|min:5|max:10'
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        Sekolah::create($validatedData);
+
+        $request->session()->flash('success', 'Registrasi telah berhasil silahkan Login!');
+
+        return redirect('/loginn');
+    }
 
     public function registerr()
     {

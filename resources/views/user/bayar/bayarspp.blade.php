@@ -202,51 +202,31 @@
                        <input type="text" name="tgl_sekarang" class="form-control" id="tgl_sekarang" value="<?php echo date('d-m-y'); ?>"
                        required disabled/>
                     </div>
-
                     <div class="form-group">
-                        <label for="exampleInputPassword1" class="form-label">Jumlah Bayar</label>
-                        <input class="form-control" id="disabledInput" type="text" placeholder="Rp. 100.000,00" disabled>
+                       <label for="exampleInputPassword1" class="form-label">No Rekening</label>
+                       <input type="text" name="tgl_sekarang" class="form-control" id="tgl_sekarang" placeholder="1234567"
+                       required disabled/>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Metode Pembayaran</label><br>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                              <input class="form-check-input mt-0" type="radio" value="Ovo"><img src="{{ asset('img/Logo OVO.png') }}" class="main-logo" width="120" />
-                            </div>
+                    <div class="form-group">
+                        <label for="">Nominal</label>
+                            <select class="form-control" name="n">
+                                <option  value="">Pilih Nominal Pembayaran</option>
+                                <option  value="">Rp. 150.000</option>
+                                <option  value="">Rp. 200.000</option>
+                                <option  value="">Rp. 300.000</option>
+                            </select>
                         </div>
-                        <br>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                              <input class="form-check-input mt-0" type="radio" value="Gopay"><img src="{{ asset('img/gopay.png') }}" class="main-logo" width="180" />
-                            </div>
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                              <input class="form-check-input mt-0" type="radio" value="Dana"><img src="{{ asset('img/dana.png') }}" class="main-logo" width="120" />
-                            </div>
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                              <input class="form-check-input mt-0" type="radio" value="Shopee"><img src="{{ asset('img/shopee.png') }}" class="main-logo" width="180" />
-                            </div>
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                              <input class="form-check-input mt-0" type="radio" value="Visa"><img src="{{ asset('img/visa.png') }}" class="main-logo" width="180" />
-                            </div>
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                              <input class="form-check-input mt-0" type="radio" value="atm"><img src="{{ asset('img/atm.png') }}" class="main-logo" width="140" />
-                            </div>
-                        </div>
-                        </label>
-                    </div> 
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Pilih Foto</label>
+                            <div class="col-md-">
+                              <img src="{{ asset('fotosiswa/'.$data->foto) }}" width="100"> <br/>
+                              <div class="mt-3">
+                                <input type="file" name="foto" class="form-control">
+                              </div>  
+                            </div>  
+                          </div>
                       <br>
                     
                     <div class="form-group">
