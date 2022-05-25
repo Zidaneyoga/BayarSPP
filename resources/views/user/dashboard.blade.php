@@ -72,7 +72,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/user/bayar/tagihanpembayaran1">
+                <a class="nav-link" href="/user/bayar/tagihanpembayaran">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>

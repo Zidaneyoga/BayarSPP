@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/bayarSPP-5.png') }}">
 
-    <title>bayarSPP | USER</title>
+    <title>bayarSPP | ADMIN</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -34,8 +34,8 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/user">
+             <!-- Sidebar - Brand -->
+             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <img src="{{ asset('img/bayarSPP-5.png') }}" class="main-logo" width="50" alt="Awesome Image" />
@@ -75,7 +75,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link active" href="/user/bayar/tagihanpembayaran1">
+                <a class="nav-link active" href="/user/bayar/tagihanpembayaran">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>
@@ -85,9 +85,7 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Laporan Pembayaran</span></a>
             </li>
-
-            
-
+        
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -115,34 +113,57 @@
                         </button>
                     </form>
 
+                    <!-- Topbar Search -->
+                    <form
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <br>
+                    <p><b>PAYMENT DATA</b></p>                
+                    </form>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                       
-
-                        
-
-                        
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+                         <!-- Nav Item - User Information -->
+                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $data->nama }}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>Bagas</b></span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('fotosiswa/'.$data->foto) }}">
+                                src="{{ asset('fotosiswa/150-2.jpg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profilesiswa1">
+                                <a class="dropdown-item" href="/profil/profilesekolah1">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="editsandi">
+                                <a class="dropdown-item" href="#">
                                     <i class="fas fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Ganti Kata Sandi
                                 </a>
@@ -151,9 +172,9 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Portal
                                 </a>
                             </div>
                         </li>
@@ -162,203 +183,105 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                <div class="container-fluid">
+
+                <div class="row">
+
+<!-- Earnings (Monthly) Card Example -->
+<div class="col-xl-12 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+            <div class="col-auto mr-2">
+            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 12rem;"
+            src="{{ asset('img/undraw_pay_online_re_aqe6.svg') }}" alt="...">
+                </div>
+                <div class="col mr-2">
+                    <div class="text font-weight-bold text-primary text-uppercase mb-3">
+                        Nomer Rekening <b>(BCA)</b></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">6110244663</div>
+                    <p class="mt-3">
+       Pembayaran SPP dapat melalui nomer rekening diatas
+    </p>
+                </div>
+                <div class="col-auto mr-5">
+                <a href="bayarspp" class="btn btn-primary btn-icon-split mx-5">
+        <span class="icon text-white-30">
+        <i class="fas fa-dollar-sign"></i>
+        </span>
+        <span class="text">Upload Transaksi</span>
+    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+                    
+
+                </div>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- DataTales Tables -->
+                    <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h5 class="m-0 font-weight-bold text-primary">Tagihan SPP</h5>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Tagihan SPP</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead class="text-center thead-light">
-                                        <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Bulan Pembayaran</th>
-                                            <th scope="col">Nominal</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Aksi</th>
+                                    <thead>
+                                        <tr class="text-center thead-light">
+
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">Bulan</th>
+                                            <th class="text-center">Tanggal Pembayaran</th>
+                                            <th class="text-center">Nominal</th>
+                                            <th class="text-center">Status</th>
+                                            <th class="text-center">Aksi</th>
+                                           
                                         </tr>
+                                        @php
+                                        $no=1;
+                                        @endphp
+
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">Juli</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-success text-center"><b>Lunas</b></td>
-                                            <td class="text-center">
 
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
+                                    <?php $no = 1 ?>
+                                    @foreach($data as $row) 
 
-                                            </td>
-                                                                                        
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">Agustus</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-success text-center"><b>Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-                                                                                         
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">3</td>
-                                            <td class="text-center">September</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-success text-center"><b>Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-                                                                                         
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center">Oktober</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-success text-center"><b>Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-                                                                                         
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">5</td>
-                                            <td class="text-center">November</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-success text-center"><b>Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-                                                                                        
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">6</td>
-                                            <td class="text-center">Desember</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-success text-center"><b>Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-                                                                                         
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center">Januari</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center">Februari</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
+                                    <tr>
+                                            <td class="text-center">{{ $no++ }}</td>
                                             
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">9</td>
-                                            <td class="text-center">Maret</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
+                                            <td class="text-center">{{ $row->bulan }}</td>
+                                            <td class="text-center">{{ $row->tanggal }}</td>
+                                            <td class="text-center">Rp. {{ $row->nominal }}</td>
+                                            <td class="text-center">{{ $row->status }}</td>
                                             <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
+                                                
+                                                <a href="/user/bayar/detailbayarspp/{{ $row->id }}" class="btn btn-info"><i class="fas fa-book-reader"></i></a>
+                                                <a href="/user/bayar/invoice" class="btn btn-danger"><i class="fas fa-file-pdf"></i></a>
+                                               
 
                                             </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">10</td>
-                                            <td class="text-center">April</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
-                                            <td class="text-center">
+                                        </tr>  
+                                   
+                                    @endforeach
 
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
 
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">11</td>
-                                            <td class="text-center">Mei</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">12</td>
-                                            <td class="text-center">Juni</td>
-                                            <td class="text-center">Rp 100.000,00</td>
-                                            <td class="text-danger text-center"><b>Belum Lunas</b></td>
-                                            <td class="text-center">
-
-                                                <a href="bayarspp1" class="btn btn-info btn-icon-split">
-                                                    <span class="text"><b>Bayar</b></span>
-                                                </a>
-
-                                            </td>
-                                            
-                                        </tr>   
-                                        
                                     </tbody>
-                                    </table>
+                                </table>
                             </div>
                         </div>
                     </div>
-
+                   
                 </div>
                 <!-- /.container-fluid -->
 
@@ -392,15 +315,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Yakin Ingin Keluar?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Ingin Ke Halaman Utama?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Tekan "Logout" jika ingin keluar dari halaman user.</div>
+                <div class="modal-body">Tekan "Portal" jika ingin pergi ke halaman utama/portal.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../">Logout</a>
+                    <a class="btn btn-primary" href="../">Portal</a>
                 </div>
             </div>
         </div>
@@ -409,6 +332,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
@@ -422,6 +346,8 @@
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+
+   
 
 </body>
 

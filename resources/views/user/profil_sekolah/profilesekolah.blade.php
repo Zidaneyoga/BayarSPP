@@ -72,7 +72,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/user/bayar/tagihanpembayaran1">
+                <a class="nav-link" href="/user/bayar/tagihanpembayaran">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>
@@ -148,7 +148,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bagas</span>
                                 <img class="img-profile rounded-circle"
-                                    src="#">
+                                    src="{{ asset('fotosiswa/150-2.jpg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

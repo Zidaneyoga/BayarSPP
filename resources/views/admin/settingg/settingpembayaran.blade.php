@@ -64,7 +64,7 @@
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
 
-            <a class="nav-link" href="/profil/profilesekolah1">
+            <a class="nav-link" href="/profil/profilesekolah/1">
                 <i class="fas fa-fw fa-user"></i>
                 <span>My Profile</span></a>
         </li>
@@ -72,14 +72,14 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/datas/filterdatasiswa">
+            <a class="nav-link" href="/datas/datasiswa">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Data Siswa</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/pembayaran/filterdatapembayaran">
+            <a class="nav-link" href="/customer">
                 <i class="fas fa-fw fa-cash-register"></i>
                 <span>Data Pembayaran</span></a>
         </li>
@@ -90,14 +90,14 @@
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Setting Pembayaran</span>
             </a>
-            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Pembayaran :</h6>
-                        <a class="collapse-item active" href="/settingg/kelas_x">X</a>
-                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
-                        <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
-                    </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Pembayaran kelas:</h6>
+                    <a class="collapse-item active" href="/settingg/settingpembayaran">Setting</a>
+                    <a class="collapse-item" href="/settingg/kelas_x">X</a>
+                    <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                    <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
+                </div>
             </div>
         </li>
 
@@ -174,9 +174,9 @@
                          <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>{{ auth()->user()->name }}</b></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>bagas</b></span>
                                 <img class="img-profile rounded-circle"
-                                src="{{ asset('fotosiswa/'.auth()->user()->foto) }}">
+                                src="">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -213,13 +213,27 @@
                         <div class="card-header py-3">
                             <h5 class="m-0 font-weight-bold text-primary">Setting Nominal Pembayaran</h5>
                         </div>
+                        <br>
+                        <left class="ml-3">
+                            <a href="/settingg/tambahsetting" class="btn btn-success btn-icon-split mx-2">
+                                <span class="icon text-white-30">
+                                <i class="fas fa-plus"></i>
+                                </span>
+                                <span class="text">Tambah</span>
+                            </a>
+
+                           
+                        </left>
+                        
                         <div class="card-body">
                             <div class="table-responsive">
+                                
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="text-center thead-light">
                                         <tr>
                                             <th scope="col">Tahun</th>
                                             <th scope="col">Nominal</th>
+                                            <th scope="col">No Rekening</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
@@ -233,20 +247,22 @@
                                             
                                             <td class="text-center">{{ $row->tahun }}</td>
                                             <td class="text-center">{{ $row->nominal }}</td>
+                                            <td class="text-center">{{ $row->no_rekening }}</td>
                                             <td class="text-center">
                                                 
-                                            <a href="/settingg/editsetting1" class="btn btn-warning btn-icon-split mx-2">
+                                            <a href="/settingg/editsetting/{{$row->id}}" class="btn btn-warning btn-icon-split mx-2">
                                                     <span class="icon text-white-30">
                                                     <i class="fas fa-edit"></i>
                                                     </span>
-                                                <span class="text">edit</span>
+                                                <span class="text">Edit</span>
                                                 </a>
                                                 
-                                                <a href="/settingg/settingpembayaran/delete/{{ $row->id }}" class="btn btn-danger btn-icon-split delete" data-id="{{ $row->id }}" data-tahun="{{ $row->tahun }}" >
+                                                <a href="/deletesetting/{{ $row->id }}" class="btn btn-danger btn-icon-split delete" data-id="{{ $row->id }}" data-tahun="{{ $row->tahun }}" 
+                                                    onclick="return confirm('Anda yakin mau menghapus data ini ?')">
                                                     <span class="icon text-white-30">
                                                     <i class="fas fa-trash"></i>
                                                     </span>
-                                                <span class="text">hapus</span>
+                                                <span class="text">Hapus</span>
                                                 </a>
                               
 

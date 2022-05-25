@@ -183,11 +183,7 @@ class EmployeeController extends Controller
     }
 
 
-    public function bayarspp($id){
-        
-        $data= Employee::find($id);
-        return view('user.bayar.bayarspp', compact('data'));
-    }
+   
 
     public function konfirmasi($id){
         

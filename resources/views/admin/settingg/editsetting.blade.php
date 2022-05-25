@@ -60,7 +60,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
 
-            <a class="nav-link" href="/profil/profilesekolah1">
+            <a class="nav-link" href="/profil/profilesekolah/1">
                 <i class="fas fa-fw fa-user"></i>
                 <span>My Profile</span></a>
         </li>
@@ -68,14 +68,14 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/datas/filterdatasiswa">
+            <a class="nav-link" href="/datas/datasiswa">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Data Siswa</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/pembayaran/filterdatapembayaran">
+            <a class="nav-link" href="/customer">
                 <i class="fas fa-fw fa-cash-register"></i>
                 <span>Data Pembayaran</span></a>
           </li>
@@ -86,14 +86,14 @@
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Setting Pembayaran</span>
             </a>
-            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Pembayaran :</h6>
-                        <a class="collapse-item active" href="/settingg/kelas_x">X</a>
-                        <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
-                        <a class="collapse-item" href="settingg/kelas_xii">XII</a>
-                    </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Pembayaran kelas:</h6>
+                    <a class="collapse-item active" href="/settingg/settingpembayaran">Setting</a>
+                    <a class="collapse-item" href="/settingg/kelas_x">X</a>
+                    <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
+                    <a class="collapse-item" href="/settingg/kelas_xii">XII</a>
+                </div>
             </div>
         </li>
 
@@ -165,9 +165,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>{{ auth()->user()->name }}</b></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b></b></span>
                                 <img class="img-profile rounded-circle"
-                                src="{{ asset('fotosiswa/'.auth()->user()->foto) }}">
+                                src="">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -219,11 +219,15 @@
                                   <form action="/updatesetting/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                               <div class="form-group">
                                     <label for="name">Tahun</label>
-                                    <input type="text" class="form-control" name="tahun" placeholder="Masukkan Tahun" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->tahun }}">
+                                    <input type="text" class="form-control" name="tahun" placeholder="Masukkan Tahun" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->tahun }}" required>
                               </div>      
                               <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nominal</label>
-                                <input type="number" name="nominal" class="form-control" placeholder="Masukkan Nominal" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nominal }}">
+                                <input type="number" name="nominal" class="form-control" placeholder="Masukkan Nominal" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->nominal }}" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">No Rekening</label>
+                                <input type="number" name="no_rekening" class="form-control" placeholder="Masukkan Rekening" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->no_rekening }}" required>
                               </div>
                               @csrf
                               

@@ -72,7 +72,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link active" href="/user/bayar/tagihanpembayaran1">
+                <a class="nav-link active" href="/user/bayar/tagihanpembayaran">
                     <i class="far fa-fw fa-credit-card"></i>
                     <span>Tagihan Pembayaran</span></a>
             </li>
@@ -194,9 +194,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $data->nama }}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bagas</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset('fotosiswa/'.$data->foto) }}">
+                                    src="{{ asset('fotosiswa/150-2.jpg') }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -254,17 +254,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                <div class="form-group">
-                    <right>
-                   
-                     <a href="invoice.html" class="btn btn-danger btn-icon-split">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-file-invoice"></i>
-                        </span>
-                        <span class="text">Unduh Bukti</span>
-                    </a>
-                    </right>
-                 </div>
+               
                  <br>
                  <br>
                  <br>
@@ -273,7 +263,7 @@
                      
                     <left>
                    
-                        <a href="bayarspp1" class="btn btn-success btn-icon-split">
+                        <a href="tagihanpembayaran" class="btn btn-success btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left"></i>
                             </span>

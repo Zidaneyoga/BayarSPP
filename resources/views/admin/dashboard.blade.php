@@ -62,20 +62,20 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
 
-                <a class="nav-link" href="/profil/profilesekolah1">
+                <a class="nav-link" href="/profil/profilesekolah/1">
                     <i class="fas fa-fw fa-user"></i>
                     <span>My Profile</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/datas/filterdatasiswa">
+                <a class="nav-link" href="/datas/datasiswa">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Siswa</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/pembayaran/filterdatapembayaran">
+                <a class="nav-link" href="/customer">
                     <i class="fas fa-fw fa-cash-register"></i>
                     <span>Data Pembayaran</span></a>
               </li>

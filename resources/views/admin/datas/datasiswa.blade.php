@@ -64,7 +64,7 @@
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
 
-            <a class="nav-link" href="/profil/profilesekolah1">
+            <a class="nav-link" href="/profil/profilesekolah/1">
                 <i class="fas fa-fw fa-user"></i>
                 <span>My Profile</span></a>
         </li>
@@ -72,14 +72,14 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
-            <a class="nav-link active" href="/datas/filterdatasiswa">
+            <a class="nav-link active" href="/datas/datasiswa">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Data Siswa</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/pembayaran/filterdatapembayaran">
+            <a class="nav-link" href="/customer">
                 <i class="fas fa-fw fa-cash-register"></i>
                 <span>Data Pembayaran</span></a>
           </li>
@@ -93,7 +93,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Pembayaran kelas:</h6>
-                    <a class="collapse-item" href="/setting_pembayaran">setting</a>
+                    <a class="collapse-item" href="/settingg/settingpembayaran">Setting</a>
                     <a class="collapse-item" href="/settingg/kelas_x">X</a>
                     <a class="collapse-item" href="/settingg/kelas_xi">XI</a>
                     <a class="collapse-item" href="/settingg/kelas_xii">XII</a>

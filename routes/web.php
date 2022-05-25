@@ -9,7 +9,10 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\SettingController;
-
+use App\Http\Controllers\OrderDetailController;
+use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\BayarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +46,9 @@ Route::post('/loginn',[LoginController::class, 'authen'])->name('loginn');
 
 // profile admin
 
-Route::get('/profil/profilesekolah{id}',[RegisterController::class, 'profilesekolah'])->name('profilesekolah')->middleware('auth');
+Route::get('/profil/profilesekolah/{id}',[RegisterController::class, 'profilesekolah'])->name('profilesekolah')->middleware('auth');
 Route::post('/updateprofilesekolah/{id}',[RegisterController::class, 'updateprofilesekolah'])->name('updateprofilesekolah')->middleware('auth');
-Route::get('/profil/editprofilesekolah{id}',[RegisterController::class, 'editprofilesekolah'])->name('editprofilesekolah')->middleware('auth');
+Route::get('/profil/editprofilesekolah/{id}',[RegisterController::class, 'editprofilesekolah'])->name('editprofilesekolah')->middleware('auth');
 
 Route::get('/editpassword',[UpdatePasswordController::class, 'edit'])->name('edit')->middleware('auth');
 Route::post('/editpassword',[UpdatePasswordController::class, 'update'])->name('update')->middleware('auth');
@@ -82,10 +85,11 @@ Route::get('/pembayaran/filterdatapembayaran', function () {
 // setting pembayaran
 
 Route::get('/settingg/settingpembayaran',[SettingController::class, 'setting'])->name('setting');
-Route::get('/settingg/editsetting{id}',[SettingController::class, 'editsetting'])->name('editsetting');
+Route::get('/settingg/editsetting/{id}',[SettingController::class, 'editsetting'])->name('editsetting');
 Route::post('/updatesetting/{id}',[SettingController::class, 'updatesetting'])->name('updatesetting');
-Route::get('/delete/{id}',[SettingController::class, 'deletesetting'])->name('delete');
-
+Route::get('/deletesetting/{id}',[SettingController::class, 'deletesetting'])->name('deletesetting');
+Route::get('/settingg/tambahsetting', [SettingController::class, 'tambahsetting'])->name('tambahsetting');
+Route::post('/insertsetting',[SettingController::class, 'insertsetting'])->name('insertsetting');
 
 // setting kelas X
 
@@ -141,14 +145,17 @@ Route::get('user/profil/profilesekolah{id}',[RegisterController::class, 'profile
 
 // tagihan pembayaran user
 
-Route::get('user/bayar/tagihanpembayaran{id}',[EmployeeController::class, 'tagihanpembayaran'])->name('tagihanpembayaran');
-Route::get('user/bayar/bayarspp{id}',[EmployeeController::class, 'bayarspp'])->name('bayarspp');
+Route::get('user/bayar/tagihanpembayaran',[BayarController::class, 'tagihanpembayaran'])->name('tagihanpembayaran');
+Route::get('user/bayar/editbayarspp/{id}',[BayarController::class, 'editbayarspp'])->name('editbayarspp');
+Route::post('/updatebayarspp/{id}',[BayarController::class, 'updatebayarspp'])->name('updatebayarspp');
+Route::get('user/bayar/detailbayarspp/{id}',[BayarController::class, 'detailbayarspp'])->name('detailbayarspp');
+Route::get('/deletebayarspp/{id}',[BayarController::class, 'deletebayarspp'])->name('deletebayarspp')->middleware('auth');
+Route::get('user/bayar/bayarspp',[BayarController::class, 'bayarspp'])->name('bayarspp');
+Route::post('/insertbayar',[BayarController::class, 'insertbayar'])->name('insertbayar');
 Route::get('user/laporan/laporanpembayaran{id}',[EmployeeController::class, 'laporanpembayaran'])->name('laporanpembayaran');
-Route::get('user/bayar/konfirmasi{id}',[EmployeeController::class, 'konfirmasi'])->name('konfirmasi');
+Route::get('user/bayar/konfirmasi',[BayarController::class, 'konfirmasi'])->name('konfirmasi');
+Route::get('user/bayar/invoice',[BayarController::class, 'invoice'])->name('invoice');
 
-Route::get('/user/bayar/tagihanpembayaran', function () {
-    return view('user.bayar.tagihanpembayaran');
-});
 
 
 // user editsandi
@@ -157,5 +164,4 @@ Route::get('/user/profil/editsandi', function () {
     return view('user.profil.editsandi');
 });
 
-
-
+Route::resource('customer', CustomerController::class);
